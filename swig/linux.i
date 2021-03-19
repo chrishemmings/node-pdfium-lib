@@ -2,4 +2,4 @@
 %{
 #include "fpdfview.h"
 %}
-%include "lib/linux/include/fpdfview.h"
+%include "externals/linux/include/fpdfview.h"

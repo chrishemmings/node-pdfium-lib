@@ -1607,44 +1607,47 @@ fail: ;
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_FPDF_BSTR_ swig_types[0]
-#define SWIGTYPE_p_FPDF_COLORSCHEME_ swig_types[1]
-#define SWIGTYPE_p_FPDF_FILEACCESS swig_types[2]
-#define SWIGTYPE_p_FPDF_FILEHANDLER_ swig_types[3]
-#define SWIGTYPE_p_FPDF_LIBRARY_CONFIG_ swig_types[4]
-#define SWIGTYPE_p_FPDF_TEXT_RENDERMODE swig_types[5]
-#define SWIGTYPE_p_FS_POINTF_ swig_types[6]
-#define SWIGTYPE_p_FS_SIZEF_ swig_types[7]
-#define SWIGTYPE_p_HDC swig_types[8]
-#define SWIGTYPE_p_LPCSTR swig_types[9]
-#define SWIGTYPE_p_RECT swig_types[10]
-#define SWIGTYPE_p__FPDF_DUPLEXTYPE_ swig_types[11]
-#define SWIGTYPE_p__FS_MATRIX_ swig_types[12]
-#define SWIGTYPE_p__FS_RECTF_ swig_types[13]
-#define SWIGTYPE_p_char swig_types[14]
-#define SWIGTYPE_p_double swig_types[15]
-#define SWIGTYPE_p_f_p_void__int swig_types[16]
-#define SWIGTYPE_p_f_p_void__unsigned_long swig_types[17]
-#define SWIGTYPE_p_f_p_void__void swig_types[18]
-#define SWIGTYPE_p_f_p_void_unsigned_long__int swig_types[19]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int swig_types[20]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int swig_types[21]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int swig_types[22]
-#define SWIGTYPE_p_float swig_types[23]
-#define SWIGTYPE_p_fpdf_bitmap_t__ swig_types[24]
-#define SWIGTYPE_p_fpdf_dest_t__ swig_types[25]
-#define SWIGTYPE_p_fpdf_document_t__ swig_types[26]
-#define SWIGTYPE_p_fpdf_page_t__ swig_types[27]
-#define SWIGTYPE_p_fpdf_pagerange_t__ swig_types[28]
-#define SWIGTYPE_p_int swig_types[29]
-#define SWIGTYPE_p_long swig_types[30]
-#define SWIGTYPE_p_p_char swig_types[31]
-#define SWIGTYPE_p_unsigned_int swig_types[32]
-#define SWIGTYPE_p_unsigned_long swig_types[33]
-#define SWIGTYPE_p_unsigned_short swig_types[34]
-#define SWIGTYPE_p_void swig_types[35]
-static swig_type_info *swig_types[37];
-static swig_module_info swig_module = {swig_types, 36, 0, 0, 0, 0};
+#define SWIGTYPE_p_BOOL swig_types[0]
+#define SWIGTYPE_p_FPDF_BSTR_ swig_types[1]
+#define SWIGTYPE_p_FPDF_COLORSCHEME_ swig_types[2]
+#define SWIGTYPE_p_FPDF_FILEACCESS swig_types[3]
+#define SWIGTYPE_p_FPDF_FILEHANDLER_ swig_types[4]
+#define SWIGTYPE_p_FPDF_LIBRARY_CONFIG_ swig_types[5]
+#define SWIGTYPE_p_FPDF_TEXT_RENDERMODE swig_types[6]
+#define SWIGTYPE_p_FS_POINTF_ swig_types[7]
+#define SWIGTYPE_p_FS_SIZEF_ swig_types[8]
+#define SWIGTYPE_p_HDC swig_types[9]
+#define SWIGTYPE_p_HGDIOBJ swig_types[10]
+#define SWIGTYPE_p_HRGN swig_types[11]
+#define SWIGTYPE_p_LPCSTR swig_types[12]
+#define SWIGTYPE_p_RECT swig_types[13]
+#define SWIGTYPE_p__FPDF_DUPLEXTYPE_ swig_types[14]
+#define SWIGTYPE_p__FS_MATRIX_ swig_types[15]
+#define SWIGTYPE_p__FS_RECTF_ swig_types[16]
+#define SWIGTYPE_p_char swig_types[17]
+#define SWIGTYPE_p_double swig_types[18]
+#define SWIGTYPE_p_f_p_void__int swig_types[19]
+#define SWIGTYPE_p_f_p_void__unsigned_long swig_types[20]
+#define SWIGTYPE_p_f_p_void__void swig_types[21]
+#define SWIGTYPE_p_f_p_void_unsigned_long__int swig_types[22]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int swig_types[23]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int swig_types[24]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int swig_types[25]
+#define SWIGTYPE_p_float swig_types[26]
+#define SWIGTYPE_p_fpdf_bitmap_t__ swig_types[27]
+#define SWIGTYPE_p_fpdf_dest_t__ swig_types[28]
+#define SWIGTYPE_p_fpdf_document_t__ swig_types[29]
+#define SWIGTYPE_p_fpdf_page_t__ swig_types[30]
+#define SWIGTYPE_p_fpdf_pagerange_t__ swig_types[31]
+#define SWIGTYPE_p_int swig_types[32]
+#define SWIGTYPE_p_long swig_types[33]
+#define SWIGTYPE_p_p_char swig_types[34]
+#define SWIGTYPE_p_unsigned_int swig_types[35]
+#define SWIGTYPE_p_unsigned_long swig_types[36]
+#define SWIGTYPE_p_unsigned_short swig_types[37]
+#define SWIGTYPE_p_void swig_types[38]
+static swig_type_info *swig_types[40];
+static swig_module_info swig_module = {swig_types, 39, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -7875,8 +7878,288 @@ fail:
 }
 
 
+static SwigV8ReturnValue _wrap_SelectClipRgn(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HDC arg1 ;
+  HRGN arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  int result;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_SelectClipRgn.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SelectClipRgn" "', argument " "1"" of type '" "HDC""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectClipRgn" "', argument " "1"" of type '" "HDC""'");
+    } else {
+      arg1 = *(reinterpret_cast< HDC * >(argp1));
+    }
+  }
+  {
+    res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_HRGN,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SelectClipRgn" "', argument " "2"" of type '" "HRGN""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectClipRgn" "', argument " "2"" of type '" "HRGN""'");
+    } else {
+      arg2 = *(reinterpret_cast< HRGN * >(argp2));
+    }
+  }
+  result = (int)SelectClipRgn(arg1,arg2);
+  jsresult = SWIG_From_int(static_cast< int >(result));
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_CreateRectRgn(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  int arg1 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  HRGN result;
+  
+  if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CreateRectRgn.");
+  
+  ecode1 = SWIG_AsVal_int(args[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "CreateRectRgn" "', argument " "1"" of type '" "int""'");
+  } 
+  arg1 = static_cast< int >(val1);
+  ecode2 = SWIG_AsVal_int(args[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CreateRectRgn" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(args[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CreateRectRgn" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  ecode4 = SWIG_AsVal_int(args[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "CreateRectRgn" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  result = CreateRectRgn(arg1,arg2,arg3,arg4);
+  jsresult = SWIG_NewPointerObj((new HRGN(static_cast< const HRGN& >(result))), SWIGTYPE_p_HRGN, SWIG_POINTER_OWN |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_DeleteObject(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HGDIOBJ arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  BOOL result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DeleteObject.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HGDIOBJ,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeleteObject" "', argument " "1"" of type '" "HGDIOBJ""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DeleteObject" "', argument " "1"" of type '" "HGDIOBJ""'");
+    } else {
+      arg1 = *(reinterpret_cast< HGDIOBJ * >(argp1));
+    }
+  }
+  result = DeleteObject(arg1);
+  jsresult = SWIG_NewPointerObj((new BOOL(static_cast< const BOOL& >(result))), SWIGTYPE_p_BOOL, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_SelectObject(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HDC arg1 ;
+  HGDIOBJ arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  HGDIOBJ result;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_SelectObject.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SelectObject" "', argument " "1"" of type '" "HDC""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectObject" "', argument " "1"" of type '" "HDC""'");
+    } else {
+      arg1 = *(reinterpret_cast< HDC * >(argp1));
+    }
+  }
+  {
+    res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_HGDIOBJ,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SelectObject" "', argument " "2"" of type '" "HGDIOBJ""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectObject" "', argument " "2"" of type '" "HGDIOBJ""'");
+    } else {
+      arg2 = *(reinterpret_cast< HGDIOBJ * >(argp2));
+    }
+  }
+  result = SelectObject(arg1,arg2);
+  jsresult = SWIG_NewPointerObj((new HGDIOBJ(static_cast< const HGDIOBJ& >(result))), SWIGTYPE_p_HGDIOBJ, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_GetStockObject(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  int arg1 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  HGDIOBJ result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_GetStockObject.");
+  
+  ecode1 = SWIG_AsVal_int(args[0], &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "GetStockObject" "', argument " "1"" of type '" "int""'");
+  } 
+  arg1 = static_cast< int >(val1);
+  result = GetStockObject(arg1);
+  jsresult = SWIG_NewPointerObj((new HGDIOBJ(static_cast< const HGDIOBJ& >(result))), SWIGTYPE_p_HGDIOBJ, SWIG_POINTER_OWN |  0 );
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_Rectangle(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HDC arg1 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  BOOL result;
+  
+  if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle" "', argument " "1"" of type '" "HDC""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Rectangle" "', argument " "1"" of type '" "HDC""'");
+    } else {
+      arg1 = *(reinterpret_cast< HDC * >(argp1));
+    }
+  }
+  ecode2 = SWIG_AsVal_int(args[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Rectangle" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(args[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Rectangle" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  ecode4 = SWIG_AsVal_int(args[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Rectangle" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  ecode5 = SWIG_AsVal_int(args[4], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "Rectangle" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  result = Rectangle(arg1,arg2,arg3,arg4,arg5);
+  jsresult = SWIG_NewPointerObj((new BOOL(static_cast< const BOOL& >(result))), SWIGTYPE_p_BOOL, SWIG_POINTER_OWN |  0 );
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static swig_type_info _swigt__p_BOOL = {"_p_BOOL", "BOOL *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_FPDF_BSTR_ = {"_p_FPDF_BSTR_", "FPDF_BSTR_ *|p_FPDF_BSTR_|FPDF_BSTR *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_FPDF_COLORSCHEME_ = {"_p_FPDF_COLORSCHEME_", "p_FPDF_COLORSCHEME_|FPDF_COLORSCHEME_ *|FPDF_COLORSCHEME *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_FPDF_FILEACCESS = {"_p_FPDF_FILEACCESS", "FPDF_FILEACCESS *|p_FPDF_FILEACCESS", 0, 0, (void*)0, 0};
@@ -7886,6 +8169,8 @@ static swig_type_info _swigt__p_FPDF_TEXT_RENDERMODE = {"_p_FPDF_TEXT_RENDERMODE
 static swig_type_info _swigt__p_FS_POINTF_ = {"_p_FS_POINTF_", "FS_POINTF_ *|FS_POINTF *|p_FS_POINTF_", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_FS_SIZEF_ = {"_p_FS_SIZEF_", "FS_SIZEF *|FS_SIZEF_ *|p_FS_SIZEF_", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_HDC = {"_p_HDC", "HDC *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_HGDIOBJ = {"_p_HGDIOBJ", "HGDIOBJ *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_HRGN = {"_p_HRGN", "HRGN *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_LPCSTR = {"_p_LPCSTR", "LPCSTR *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_RECT = {"_p_RECT", "RECT *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p__FPDF_DUPLEXTYPE_ = {"_p__FPDF_DUPLEXTYPE_", "FPDF_DUPLEXTYPE *|enum _FPDF_DUPLEXTYPE_ *", 0, 0, (void*)0, 0};
@@ -7915,6 +8200,7 @@ static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "FPDF_WCH
 static swig_type_info _swigt__p_void = {"_p_void", "void *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_BOOL,
   &_swigt__p_FPDF_BSTR_,
   &_swigt__p_FPDF_COLORSCHEME_,
   &_swigt__p_FPDF_FILEACCESS,
@@ -7924,6 +8210,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_FS_POINTF_,
   &_swigt__p_FS_SIZEF_,
   &_swigt__p_HDC,
+  &_swigt__p_HGDIOBJ,
+  &_swigt__p_HRGN,
   &_swigt__p_LPCSTR,
   &_swigt__p_RECT,
   &_swigt__p__FPDF_DUPLEXTYPE_,
@@ -7953,6 +8241,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_void,
 };
 
+static swig_cast_info _swigc__p_BOOL[] = {  {&_swigt__p_BOOL, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_FPDF_BSTR_[] = {  {&_swigt__p_FPDF_BSTR_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_FPDF_COLORSCHEME_[] = {  {&_swigt__p_FPDF_COLORSCHEME_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_FPDF_FILEACCESS[] = {  {&_swigt__p_FPDF_FILEACCESS, 0, 0, 0},{0, 0, 0, 0}};
@@ -7962,6 +8251,8 @@ static swig_cast_info _swigc__p_FPDF_TEXT_RENDERMODE[] = {  {&_swigt__p_FPDF_TEX
 static swig_cast_info _swigc__p_FS_POINTF_[] = {  {&_swigt__p_FS_POINTF_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_FS_SIZEF_[] = {  {&_swigt__p_FS_SIZEF_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_HDC[] = {  {&_swigt__p_HDC, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_HGDIOBJ[] = {  {&_swigt__p_HGDIOBJ, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_HRGN[] = {  {&_swigt__p_HRGN, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LPCSTR[] = {  {&_swigt__p_LPCSTR, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_RECT[] = {  {&_swigt__p_RECT, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p__FPDF_DUPLEXTYPE_[] = {  {&_swigt__p__FPDF_DUPLEXTYPE_, 0, 0, 0},{0, 0, 0, 0}};
@@ -7991,6 +8282,7 @@ static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short
 static swig_cast_info _swigc__p_void[] = {  {&_swigt__p_void, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_BOOL,
   _swigc__p_FPDF_BSTR_,
   _swigc__p_FPDF_COLORSCHEME_,
   _swigc__p_FPDF_FILEACCESS,
@@ -8000,6 +8292,8 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_FS_POINTF_,
   _swigc__p_FS_SIZEF_,
   _swigc__p_HDC,
+  _swigc__p_HGDIOBJ,
+  _swigc__p_HRGN,
   _swigc__p_LPCSTR,
   _swigc__p_RECT,
   _swigc__p__FPDF_DUPLEXTYPE_,
@@ -8674,6 +8968,12 @@ SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketCount", _wrap_FPDF_GetXF
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketName", _wrap_FPDF_GetXFAPacketName, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketContent", _wrap_FPDF_GetXFAPacketContent, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileA", _wrap_CreateEnhMetaFileA, context);
+SWIGV8_AddStaticFunction(exports_obj, "SelectClipRgn", _wrap_SelectClipRgn, context);
+SWIGV8_AddStaticFunction(exports_obj, "CreateRectRgn", _wrap_CreateRectRgn, context);
+SWIGV8_AddStaticFunction(exports_obj, "DeleteObject", _wrap_DeleteObject, context);
+SWIGV8_AddStaticFunction(exports_obj, "SelectObject", _wrap_SelectObject, context);
+SWIGV8_AddStaticFunction(exports_obj, "GetStockObject", _wrap_GetStockObject, context);
+SWIGV8_AddStaticFunction(exports_obj, "Rectangle", _wrap_Rectangle, context);
 
 
   /* register classes */

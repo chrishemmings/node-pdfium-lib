@@ -2,7 +2,7 @@
 %{
 #include "fpdfview.h"
 %}
-%include "lib/win/include/fpdfview.h"
+%include "externals/win/x64/include/fpdfview.h"
 HDC CreateEnhMetaFileA(
   HDC        hdc,
   LPCSTR     lpFilename,

@@ -2,4 +2,4 @@
 %{
 #include "fpdfview.h"
 %}
-%include "lib/mac/include/fpdfview.h"
+%include "externals/mac/include/fpdfview.h"
