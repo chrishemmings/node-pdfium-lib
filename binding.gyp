@@ -68,14 +68,15 @@
                         {
                             "destination": "<(module_root_dir)/build/Release",
                             "files": [
-                                "externals/win/x64/lib/pdfium.dll.lib",
                                 "externals/win/x64/bin/pdfium.dll"
                             ]
                         }
                     ],
+                    'library_dirs' : [
+                        "externals/win/x64/incllibude"
+                    ],
                     "libraries": [
-                        "<(module_root_dir)/build/Release/libpdfium.dll.lib"
-                        "<(module_root_dir)/build/Release/libpdfium.dll"
+                        "libpdfium.dll.lib"
                     ],
                 }]
             ],
