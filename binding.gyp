@@ -73,7 +73,7 @@
                         }
                     ],
                     'library_dirs' : [
-                        "externals/win/x64/incllibude"
+                        "externals/win/x64/lib"
                     ],
                     "libraries": [
                         "libpdfium.dll.lib"
