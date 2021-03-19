@@ -39,24 +39,6 @@
                         'libraries': ['-L<(module_root_dir)/build/Release', '-lpdfium'],
                     },
                 }],
-                # ['OS=="win"', {
-                #     "sources": [
-                #         "src/pdfium_win_<(target_arch).cxx",
-                #     ],
-                #     'include_dirs': [
-                #         'externals/win/<(target_arch)/include',
-                #     ],
-                #     "copies": [
-                #         {
-                #             "destination": "<(module_root_dir)/build/Release",
-                #             "files": [
-                #                 "externals/win/<(target_arch)/lib/pdfium.dll.lib",
-                #                 "externals/win/<(target_arch)/bin/pdfium.dll"
-                #             ]
-                #         }
-                #     ],
-                #     "libraries": ["<(module_root_dir)/build/Release/libpdfium.dll.lib"],
-                # }]
                 ['OS=="win"', {
                     "sources": [
                         "src/pdfium_win_x64.cxx",
