@@ -69,7 +69,7 @@
                             "destination": "<(module_root_dir)/build/Release",
                             "files": [
                                 "externals/win/x64/bin/pdfium.dll",
-                                "externals/win/x64/bin/pdfium.dll.lib"
+                                "externals/win/x64/lib/pdfium.dll.lib"
                             ]
                         }
                     ],
