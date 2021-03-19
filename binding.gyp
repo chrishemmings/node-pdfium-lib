@@ -73,7 +73,10 @@
                             ]
                         }
                     ],
-                    "libraries": ["<(module_root_dir)/build/Release/libpdfium.dll.lib"],
+                    "libraries": [
+                        "<(module_root_dir)/build/Release/libpdfium.dll.lib"
+                        "<(module_root_dir)/build/Release/libpdfium.dll"
+                    ],
                 }]
             ],
         }
