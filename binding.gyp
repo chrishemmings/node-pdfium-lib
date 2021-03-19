@@ -31,7 +31,7 @@
                     "copies": [
                         {
                             "destination": "<(module_root_dir)/build/Release",
-                            "files": ["externals/mac/lib/libpdfium.so"]
+                            "files": ["externals/linux/lib/libpdfium.so"]
                         }
                     ],
                     "libraries": ["<(module_root_dir)/build/Release/libpdfium.so"],
