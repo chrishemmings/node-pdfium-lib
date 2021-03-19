@@ -41,7 +41,7 @@
                 }],
                 ['OS=="win"', {
                     "sources": [
-                        "src/pdfium_win.cxx",
+                        "src/pdfium_win_<(target_arch).cxx",
                     ],
                     'include_dirs': [
                         'externals/win/<(target_arch)/include',
@@ -56,9 +56,6 @@
                         }
                     ],
                     "libraries": ["<(module_root_dir)/build/Release/libpdfium.dll.lib"],
-                    'link_settings': {
-                        'libraries': ['-L<(module_root_dir)/build/Release', '-lpdfium'],
-                    },
                 }]
             ],
         }
