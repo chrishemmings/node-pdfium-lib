@@ -41,17 +41,17 @@
                 }],
                 ['OS=="win"', {
                     "sources": [
-                        "src/pdfium_win_x64.cxx",
+                        "src/pdfium_win_<(target_arch).cxx",
                     ],
                     'include_dirs': [
-                        'externals/win/x64/include',
+                        'externals/win/<(target_arch)/include',
                     ],
                     "copies": [
                         {
                             "destination": "<(module_root_dir)/build/Release",
                             "files": [
-                                "externals/win/x64/bin/pdfium.dll",
-                                "externals/win/x64/lib/pdfium.dll.lib"
+                                "externals/win/<(target_arch)/bin/pdfium.dll",
+                                "externals/win/<(target_arch)/lib/pdfium.dll.lib"
                             ]
                         }
                     ],
