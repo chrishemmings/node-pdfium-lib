@@ -76,7 +76,7 @@
                         "externals/win/x64/lib"
                     ],
                     "libraries": [
-                        "libpdfium.dll.lib"
+                        "pdfium.dll.lib"
                     ],
                 }]
             ],
