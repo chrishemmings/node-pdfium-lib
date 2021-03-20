@@ -66,9 +66,9 @@ if (process.platform === "win32") {
     exports.createEmf = function(page) {
         width = pdfium.FPDF_GetPageWidth(page);
         height = pdfium.FPDF_GetPageHeight(page);
-
-
-        // HDC dc = CreateEnhMetaFileA(NULL, filename, NULL, NULL);
+        dc = pdfium.CreateEnhMetaFileW(null, null, null, null);
+        rgn = pdfium.CreateRectRgn(0, 0, width, height);
+        // HDC dc = CreateEnhMetaFileA(NULL, null, NULL, NULL);
         // HRGN rgn = CreateRectRgn(0, 0, width, height);
         // SelectClipRgn(dc, rgn);
         // DeleteObject(rgn);

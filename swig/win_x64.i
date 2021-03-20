@@ -3,11 +3,8 @@
 #include "fpdfview.h"
 %}
 %include "externals/win/x64/include/fpdfview.h"
-HDC CreateEnhMetaFileA(
-  HDC        hdc,
-  LPCSTR     lpFilename,
-  const RECT *lprc,
-  LPCSTR     lpDesc
+HDC CreateMetaFileA(
+  LPCSTR pszFile
 );
 int SelectClipRgn(
   HDC  hdc,
@@ -35,4 +32,15 @@ BOOL Rectangle(
   int top,
   int right,
   int bottom
+);
+HDC CreateEnhMetaFileW(
+  HDC        hdc,
+  LPCWSTR    lpFilename,
+  const RECT *lprc,
+  LPCWSTR    lpDesc
+);
+UINT GetEnhMetaFileBits(
+  HENHMETAFILE hEMF,
+  UINT nSize,
+  LPBYTE lpData
 );
