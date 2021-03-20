@@ -8414,6 +8414,38 @@ fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
 
+static SwigV8ReturnValue _wrap_DeleteObjectHRGN(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+
+  SWIGV8_VALUE jsresult;
+  HRGN arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  BOOL result;
+
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DeleteObject.");
+
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HRGN,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeleteObject" "', argument " "1"" of type '" "HRGN""'");
+    }
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DeleteObject" "', argument " "1"" of type '" "HRGN""'");
+    } else {
+      arg1 = *(reinterpret_cast< HRGN * >(argp1));
+    }
+  }
+  result = DeleteObject(arg1);
+  jsresult = SWIG_NewPointerObj((new BOOL(static_cast< const BOOL& >(result))), SWIGTYPE_p_BOOL, SWIG_POINTER_OWN |  0 );
+
+  SWIGV8_RETURN(jsresult);
+
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_BOOL = {"_p_BOOL", "BOOL *", 0, 0, (void*)0, 0};
@@ -9252,6 +9284,7 @@ SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileW", _wrap_CreateEnhMetaF
 SWIGV8_AddStaticFunction(exports_obj, "GetEnhMetaFileBits", _wrap_GetEnhMetaFileBits, context);
 SWIGV8_AddStaticFunction(exports_obj, "CloseEnhMetaFile", _wrap_CloseEnhMetaFile, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
+SWIGV8_AddStaticFunction(exports_obj, "DeleteObjectHRGN", _wrap_DeleteObjectHRGN, context);
 
   /* register classes */
   #if (V8_MAJOR_VERSION-0) < 5
