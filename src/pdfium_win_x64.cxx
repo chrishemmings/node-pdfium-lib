@@ -9282,7 +9282,7 @@ NODE_MODULE_CONTEXT_AWARE(pdfium, pdfium_initialize)
 #endif
 #endif
 
-static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args)
+static SwigV8ReturnValue _wrap_CreateEnhMetaFileWNull(const SwigV8Arguments &args)
 {
     SWIGV8_HANDLESCOPE();
 
@@ -9314,4 +9314,4 @@ fail:
     SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
 
-SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNUll, context);
+SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
