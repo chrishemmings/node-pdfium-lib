@@ -36,3 +36,6 @@ BOOL Rectangle(
   int right,
   int bottom
 );
+HENHMETAFILE CloseEnhMetaFile(
+  HDC hdc
+);

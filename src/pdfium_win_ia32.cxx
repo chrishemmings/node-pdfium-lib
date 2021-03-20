@@ -1617,37 +1617,38 @@ fail: ;
 #define SWIGTYPE_p_FS_POINTF_ swig_types[7]
 #define SWIGTYPE_p_FS_SIZEF_ swig_types[8]
 #define SWIGTYPE_p_HDC swig_types[9]
-#define SWIGTYPE_p_HGDIOBJ swig_types[10]
-#define SWIGTYPE_p_HRGN swig_types[11]
-#define SWIGTYPE_p_LPCSTR swig_types[12]
-#define SWIGTYPE_p_RECT swig_types[13]
-#define SWIGTYPE_p__FPDF_DUPLEXTYPE_ swig_types[14]
-#define SWIGTYPE_p__FS_MATRIX_ swig_types[15]
-#define SWIGTYPE_p__FS_RECTF_ swig_types[16]
-#define SWIGTYPE_p_char swig_types[17]
-#define SWIGTYPE_p_double swig_types[18]
-#define SWIGTYPE_p_f_p_void__int swig_types[19]
-#define SWIGTYPE_p_f_p_void__unsigned_long swig_types[20]
-#define SWIGTYPE_p_f_p_void__void swig_types[21]
-#define SWIGTYPE_p_f_p_void_unsigned_long__int swig_types[22]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int swig_types[23]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int swig_types[24]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int swig_types[25]
-#define SWIGTYPE_p_float swig_types[26]
-#define SWIGTYPE_p_fpdf_bitmap_t__ swig_types[27]
-#define SWIGTYPE_p_fpdf_dest_t__ swig_types[28]
-#define SWIGTYPE_p_fpdf_document_t__ swig_types[29]
-#define SWIGTYPE_p_fpdf_page_t__ swig_types[30]
-#define SWIGTYPE_p_fpdf_pagerange_t__ swig_types[31]
-#define SWIGTYPE_p_int swig_types[32]
-#define SWIGTYPE_p_long swig_types[33]
-#define SWIGTYPE_p_p_char swig_types[34]
-#define SWIGTYPE_p_unsigned_int swig_types[35]
-#define SWIGTYPE_p_unsigned_long swig_types[36]
-#define SWIGTYPE_p_unsigned_short swig_types[37]
-#define SWIGTYPE_p_void swig_types[38]
-static swig_type_info *swig_types[40];
-static swig_module_info swig_module = {swig_types, 39, 0, 0, 0, 0};
+#define SWIGTYPE_p_HENHMETAFILE swig_types[10]
+#define SWIGTYPE_p_HGDIOBJ swig_types[11]
+#define SWIGTYPE_p_HRGN swig_types[12]
+#define SWIGTYPE_p_LPCSTR swig_types[13]
+#define SWIGTYPE_p_RECT swig_types[14]
+#define SWIGTYPE_p__FPDF_DUPLEXTYPE_ swig_types[15]
+#define SWIGTYPE_p__FS_MATRIX_ swig_types[16]
+#define SWIGTYPE_p__FS_RECTF_ swig_types[17]
+#define SWIGTYPE_p_char swig_types[18]
+#define SWIGTYPE_p_double swig_types[19]
+#define SWIGTYPE_p_f_p_void__int swig_types[20]
+#define SWIGTYPE_p_f_p_void__unsigned_long swig_types[21]
+#define SWIGTYPE_p_f_p_void__void swig_types[22]
+#define SWIGTYPE_p_f_p_void_unsigned_long__int swig_types[23]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int swig_types[24]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int swig_types[25]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int swig_types[26]
+#define SWIGTYPE_p_float swig_types[27]
+#define SWIGTYPE_p_fpdf_bitmap_t__ swig_types[28]
+#define SWIGTYPE_p_fpdf_dest_t__ swig_types[29]
+#define SWIGTYPE_p_fpdf_document_t__ swig_types[30]
+#define SWIGTYPE_p_fpdf_page_t__ swig_types[31]
+#define SWIGTYPE_p_fpdf_pagerange_t__ swig_types[32]
+#define SWIGTYPE_p_int swig_types[33]
+#define SWIGTYPE_p_long swig_types[34]
+#define SWIGTYPE_p_p_char swig_types[35]
+#define SWIGTYPE_p_unsigned_int swig_types[36]
+#define SWIGTYPE_p_unsigned_long swig_types[37]
+#define SWIGTYPE_p_unsigned_short swig_types[38]
+#define SWIGTYPE_p_void swig_types[39]
+static swig_type_info *swig_types[41];
+static swig_module_info swig_module = {swig_types, 40, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -8252,6 +8253,39 @@ fail:
 }
 
 
+static SwigV8ReturnValue _wrap_CloseEnhMetaFile(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HDC arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  HENHMETAFILE result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CloseEnhMetaFile.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CloseEnhMetaFile" "', argument " "1"" of type '" "HDC""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CloseEnhMetaFile" "', argument " "1"" of type '" "HDC""'");
+    } else {
+      arg1 = *(reinterpret_cast< HDC * >(argp1));
+    }
+  }
+  result = CloseEnhMetaFile(arg1);
+  jsresult = SWIG_NewPointerObj((new HENHMETAFILE(static_cast< const HENHMETAFILE& >(result))), SWIGTYPE_p_HENHMETAFILE, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_BOOL = {"_p_BOOL", "BOOL *", 0, 0, (void*)0, 0};
@@ -8264,6 +8298,7 @@ static swig_type_info _swigt__p_FPDF_TEXT_RENDERMODE = {"_p_FPDF_TEXT_RENDERMODE
 static swig_type_info _swigt__p_FS_POINTF_ = {"_p_FS_POINTF_", "FS_POINTF_ *|FS_POINTF *|p_FS_POINTF_", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_FS_SIZEF_ = {"_p_FS_SIZEF_", "FS_SIZEF *|FS_SIZEF_ *|p_FS_SIZEF_", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_HDC = {"_p_HDC", "HDC *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_HENHMETAFILE = {"_p_HENHMETAFILE", "HENHMETAFILE *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_HGDIOBJ = {"_p_HGDIOBJ", "HGDIOBJ *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_HRGN = {"_p_HRGN", "HRGN *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_LPCSTR = {"_p_LPCSTR", "LPCSTR *", 0, 0, (void*)0, 0};
@@ -8305,6 +8340,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_FS_POINTF_,
   &_swigt__p_FS_SIZEF_,
   &_swigt__p_HDC,
+  &_swigt__p_HENHMETAFILE,
   &_swigt__p_HGDIOBJ,
   &_swigt__p_HRGN,
   &_swigt__p_LPCSTR,
@@ -8346,6 +8382,7 @@ static swig_cast_info _swigc__p_FPDF_TEXT_RENDERMODE[] = {  {&_swigt__p_FPDF_TEX
 static swig_cast_info _swigc__p_FS_POINTF_[] = {  {&_swigt__p_FS_POINTF_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_FS_SIZEF_[] = {  {&_swigt__p_FS_SIZEF_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_HDC[] = {  {&_swigt__p_HDC, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_HENHMETAFILE[] = {  {&_swigt__p_HENHMETAFILE, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_HGDIOBJ[] = {  {&_swigt__p_HGDIOBJ, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_HRGN[] = {  {&_swigt__p_HRGN, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LPCSTR[] = {  {&_swigt__p_LPCSTR, 0, 0, 0},{0, 0, 0, 0}};
@@ -8387,6 +8424,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_FS_POINTF_,
   _swigc__p_FS_SIZEF_,
   _swigc__p_HDC,
+  _swigc__p_HENHMETAFILE,
   _swigc__p_HGDIOBJ,
   _swigc__p_HRGN,
   _swigc__p_LPCSTR,
@@ -9070,6 +9108,7 @@ SWIGV8_AddStaticFunction(exports_obj, "DeleteObject", _wrap_DeleteObject, contex
 SWIGV8_AddStaticFunction(exports_obj, "SelectObject", _wrap_SelectObject, context);
 SWIGV8_AddStaticFunction(exports_obj, "GetStockObject", _wrap_GetStockObject, context);
 SWIGV8_AddStaticFunction(exports_obj, "Rectangle", _wrap_Rectangle, context);
+SWIGV8_AddStaticFunction(exports_obj, "CloseEnhMetaFile", _wrap_CloseEnhMetaFile, context);
 
 
   /* register classes */

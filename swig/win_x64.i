@@ -44,3 +44,6 @@ UINT GetEnhMetaFileBits(
   UINT nSize,
   LPBYTE lpData
 );
+HENHMETAFILE CloseEnhMetaFile(
+  HDC hdc
+);
