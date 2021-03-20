@@ -66,18 +66,18 @@ if (process.platform === "win32") {
     exports.createEmf = function(page) {
         width = pdfium.FPDF_GetPageWidth(page);
         height = pdfium.FPDF_GetPageHeight(page);
-        dc = pdfium.CreateEnhMetaFileW(null, null, null, null);
+        dc = pdfium.CreateEnhMetaFileW(undefined, undefined, undefined, undefined);
         rgn = pdfium.CreateRectRgn(0, 0, width, height);
         // HDC dc = CreateEnhMetaFileA(NULL, null, NULL, NULL);
         // HRGN rgn = CreateRectRgn(0, 0, width, height);
-        // SelectClipRgn(dc, rgn);
-        // DeleteObject(rgn);
-        // SelectObject(dc, GetStockObject(NULL_PEN));
-        // SelectObject(dc, GetStockObject(WHITE_BRUSH));
+        pdfium.SelectClipRgn(dc, rgn);
+        pdfium.DeleteObject(rgn);
+        pdfium.SelectObject(dc, pdfium.GetStockObject(NULL_PEN));
+        pdfium.SelectObject(dc, pdfium.GetStockObject(WHITE_BRUSH));
         // // If a PS_NULL pen is used, the dimensions of the rectangle are 1 pixel less.
-        // Rectangle(dc, 0, 0, width + 1, height + 1);
-        // FPDF_RenderPage(dc, page, 0, 0, width, height, 0,
-        //                 FPDF_ANNOT | FPDF_PRINTING | FPDF_NO_CATCH);
+        pdfium.Rectangle(dc, 0, 0, width + 1, height + 1);
+        pdfium.FPDF_RenderPage(dc, page, 0, 0, width, height, 0,
+                        FPDF_ANNOT | FPDF_PRINTING | FPDF_NO_CATCH);
 
     }
 }
