@@ -6445,6 +6445,101 @@ static void _wrap_delete_FPDF_COLORSCHEME(v8::Persistent<v8::Value> object, void
         }
 
 
+static SwigV8ReturnValue _wrap_FPDF_RenderPage(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HDC arg1 ;
+  FPDF_PAGE arg2 = (FPDF_PAGE) 0 ;
+  int arg3 ;
+  int arg4 ;
+  int arg5 ;
+  int arg6 ;
+  int arg7 ;
+  int arg8 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  int val7 ;
+  int ecode7 = 0 ;
+  int val8 ;
+  int ecode8 = 0 ;
+  
+  if(args.Length() != 8) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_RenderPage.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPage" "', argument " "1"" of type '" "HDC""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "FPDF_RenderPage" "', argument " "1"" of type '" "HDC""'");
+    } else {
+      arg1 = *(reinterpret_cast< HDC * >(argp1));
+    }
+  }
+  res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPage" "', argument " "2"" of type '" "FPDF_PAGE""'"); 
+  }
+  arg2 = reinterpret_cast< FPDF_PAGE >(argp2);
+  ecode3 = SWIG_AsVal_int(args[2], &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDF_RenderPage" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  ecode4 = SWIG_AsVal_int(args[3], &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_RenderPage" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  ecode5 = SWIG_AsVal_int(args[4], &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDF_RenderPage" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  ecode6 = SWIG_AsVal_int(args[5], &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "FPDF_RenderPage" "', argument " "6"" of type '" "int""'");
+  } 
+  arg6 = static_cast< int >(val6);
+  ecode7 = SWIG_AsVal_int(args[6], &val7);
+  if (!SWIG_IsOK(ecode7)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "FPDF_RenderPage" "', argument " "7"" of type '" "int""'");
+  } 
+  arg7 = static_cast< int >(val7);
+  ecode8 = SWIG_AsVal_int(args[7], &val8);
+  if (!SWIG_IsOK(ecode8)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "FPDF_RenderPage" "', argument " "8"" of type '" "int""'");
+  } 
+  arg8 = static_cast< int >(val8);
+  FPDF_RenderPage(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
+  jsresult = SWIGV8_UNDEFINED();
+  
+  
+  
+  
+  
+  
+  
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 static SwigV8ReturnValue _wrap_FPDF_RenderPageBitmap(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
@@ -8939,6 +9034,7 @@ SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetPageHeight", _wrap_FPDF_GetPageHe
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetPageBoundingBox", _wrap_FPDF_GetPageBoundingBox, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetPageSizeByIndexF", _wrap_FPDF_GetPageSizeByIndexF, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetPageSizeByIndex", _wrap_FPDF_GetPageSizeByIndex, context);
+SWIGV8_AddStaticFunction(exports_obj, "FPDF_RenderPage", _wrap_FPDF_RenderPage, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_RenderPageBitmap", _wrap_FPDF_RenderPageBitmap, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_RenderPageBitmapWithMatrix", _wrap_FPDF_RenderPageBitmapWithMatrix, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_ClosePage", _wrap_FPDF_ClosePage, context);

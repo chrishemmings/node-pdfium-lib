@@ -798,7 +798,6 @@ typedef struct FPDF_COLORSCHEME_ {
   FPDF_DWORD text_stroke_color;
 } FPDF_COLORSCHEME;
 
-#ifdef _WIN32
 // Function: FPDF_RenderPage
 //          Render contents of a page to a device (screen, bitmap, or printer).
 //          This function is only supported on Windows.
@@ -828,7 +827,6 @@ FPDF_EXPORT void FPDF_CALLCONV FPDF_RenderPage(HDC dc,
                                                int size_y,
                                                int rotate,
                                                int flags);
-#endif
 
 // Function: FPDF_RenderPageBitmap
 //          Render contents of a page to a device independent bitmap.
