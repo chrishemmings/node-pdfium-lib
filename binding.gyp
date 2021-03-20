@@ -42,7 +42,6 @@
                 ['OS=="win"', {
                     "sources": [
                         "src/pdfium_win_<(target_arch).cxx",
-                        "src/extra_win_<(target_arch).cxx",
                     ],
                     'include_dirs': [
                         'externals/win/<(target_arch)/include',

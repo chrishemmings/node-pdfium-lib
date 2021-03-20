@@ -157,9 +157,9 @@ template <typename T> T SwigValueInit() {
 
 
 
-#define SWIG_exception_fail(code, msg) do { SWIG_Error(code, msg); SWIG_fail; } while(0) 
+#define SWIG_exception_fail(code, msg) do { SWIG_Error(code, msg); SWIG_fail; } while(0)
 
-#define SWIG_contract_assert(expr, msg) if (!(expr)) { SWIG_Error(SWIG_RuntimeError, msg); SWIG_fail; } else 
+#define SWIG_contract_assert(expr, msg) if (!(expr)) { SWIG_Error(SWIG_RuntimeError, msg); SWIG_fail; } else
 
 
 
@@ -995,7 +995,7 @@ public:
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < SWIGV8_SETWEAK_VERSION)
     handle.ClearWeak();
     handle.Dispose();
-#else    
+#else
     handle.ClearWeak();
     handle.Reset();
 #endif
@@ -1179,7 +1179,7 @@ SWIGRUNTIME void SWIGV8_SetPrivateData(SWIGV8_OBJECT obj, void *ptr, swig_type_i
 
 SWIGRUNTIME int SWIG_V8_ConvertPtr(SWIGV8_VALUE valRef, void **ptr, swig_type_info *info, int flags) {
   SWIGV8_HANDLESCOPE();
-  
+
   /* special case: JavaScript null => C NULL pointer */
   if(valRef->IsNull()) {
     *ptr=0;
@@ -1194,13 +1194,13 @@ SWIGRUNTIME int SWIG_V8_ConvertPtr(SWIGV8_VALUE valRef, void **ptr, swig_type_in
 
 SWIGRUNTIME SWIGV8_VALUE SWIG_V8_NewPointerObj(void *ptr, swig_type_info *info, int flags) {
   SWIGV8_HANDLESCOPE_ESC();
-  
+
   SWIGV8_FUNCTION_TEMPLATE class_templ;
 
   if (ptr == NULL) {
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031903)
     SWIGV8_ESCAPE(SWIGV8_NULL());
-#else    
+#else
     v8::Local<v8::Primitive> result = SWIGV8_NULL();
     SWIGV8_ESCAPE(result);
 #endif
@@ -1246,7 +1246,7 @@ SWIGRUNTIME SWIGV8_VALUE SWIG_V8_NewPointerObj(void *ptr, swig_type_info *info, 
 
 SWIGRUNTIME SwigV8ReturnValue _SWIGV8_wrap_equals(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   void *arg1 = (void *) 0 ;
   void *arg2 = (void *) 0 ;
@@ -1276,7 +1276,7 @@ fail:
 
 SWIGRUNTIME SwigV8ReturnValue _wrap_getCPtr(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   void *arg1 = (void *) 0 ;
   long result;
@@ -1318,7 +1318,7 @@ public:
 SWIGRUNTIMEINLINE
 int SwigV8Packed_Check(SWIGV8_VALUE valRef) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT objRef = SWIGV8_TO_OBJECT(valRef);
   if(objRef->InternalFieldCount() < 1) return false;
 #if (V8_MAJOR_VERSION-0) < 5
@@ -1336,7 +1336,7 @@ SWIGRUNTIME
 swig_type_info *SwigV8Packed_UnpackData(SWIGV8_VALUE valRef, void *ptr, size_t size) {
   if (SwigV8Packed_Check(valRef)) {
     SWIGV8_HANDLESCOPE();
-    
+
     SwigV8PackedData *sobj;
 
     SWIGV8_OBJECT objRef = SWIGV8_TO_OBJECT(valRef);
@@ -1473,7 +1473,7 @@ SWIGRUNTIME
 
 SWIGV8_VALUE SWIGV8_AppendOutput(SWIGV8_VALUE result, SWIGV8_VALUE obj) {
   SWIGV8_HANDLESCOPE_ESC();
-  
+
   if (result->IsUndefined()) {
     result = SWIGV8_ARRAY_NEW(0);
   } else if (!result->IsArray()) {
@@ -1512,7 +1512,7 @@ typedef v8::PropertyCallbackInfo<void>  SwigV8PropertyCallbackInfoVoid;
  */
 SWIGRUNTIME SWIGV8_FUNCTION_TEMPLATE SWIGV8_CreateClassTemplate(const char* symbol) {
     SWIGV8_HANDLESCOPE_ESC();
-    
+
     v8::Local<v8::FunctionTemplate> class_templ = SWIGV8_FUNCTEMPLATE_NEW_VOID();
     class_templ->SetClassName(SWIGV8_SYMBOL_NEW(symbol));
 
@@ -1659,12 +1659,12 @@ static swig_module_info swig_module = {swig_types, 43, 0, 0, 0, 0};
 
 
 
-#define SWIGVERSION 0x040100 
+#define SWIGVERSION 0x040100
 #define SWIG_VERSION SWIGVERSION
 
 
-#define SWIG_as_voidptr(a) const_cast< void * >(static_cast< const void * >(a)) 
-#define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),reinterpret_cast< void** >(a)) 
+#define SWIG_as_voidptr(a) const_cast< void * >(static_cast< const void * >(a))
+#define SWIG_as_voidptrptr(a) ((void)SWIG_as_voidptr(*a),reinterpret_cast< void** >(a))
 
 
 #include <stdexcept>
@@ -1709,11 +1709,11 @@ SWIG_AsCharPtrAndSize(SWIGV8_VALUE valRef, char** cptr, size_t* psize, int *allo
     size_t len = SWIGV8_UTF8_LENGTH(js_str) + 1;
     char* cstr = new char[len];
     SWIGV8_WRITE_UTF8(js_str, cstr, len);
-    
+
     if(alloc) *alloc = SWIG_NEWOBJ;
     if(psize) *psize = len;
     if(cptr) *cptr = cstr;
-    
+
     return SWIG_OK;
   } else {
     if(valRef->IsObject()) {
@@ -1761,9 +1761,9 @@ SWIG_FromCharPtrAndSize(const char* carray, size_t size)
 }
 
 
-SWIGINTERNINLINE SWIGV8_VALUE 
+SWIGINTERNINLINE SWIGV8_VALUE
 SWIG_FromCharPtr(const char *cptr)
-{ 
+{
   return SWIG_FromCharPtrAndSize(cptr, (cptr ? strlen(cptr) : 0));
 }
 
@@ -1853,7 +1853,7 @@ SWIG_AsVal_float (SWIGV8_VALUE obj, float *val)
     } else {
       if (val) *val = static_cast< float >(v);
     }
-  }  
+  }
   return res;
 }
 
@@ -1867,7 +1867,7 @@ SWIGV8_VALUE SWIG_From_double   (double val)
 
 SWIGINTERNINLINE SWIGV8_VALUE
 SWIG_From_float  (float value)
-{    
+{
   return SWIG_From_double  (value);
 }
 
@@ -1942,7 +1942,7 @@ SWIG_AsVal_unsigned_SS_int (SWIGV8_VALUE obj, unsigned int *val)
     } else {
       if (val) *val = static_cast< unsigned int >(v);
     }
-  }  
+  }
   return res;
 }
 
@@ -1963,7 +1963,7 @@ SWIGV8_VALUE SWIG_From_unsigned_SS_long  (unsigned long value)
 
 SWIGINTERNINLINE SWIGV8_VALUE
 SWIG_From_unsigned_SS_int  (unsigned int value)
-{    
+{
   return SWIG_From_unsigned_SS_long  (value);
 }
 
@@ -2035,7 +2035,7 @@ SWIGV8_VALUE SWIG_From_unsigned_SS_long_SS_long  (unsigned long long value)
 
 SWIGINTERNINLINE SWIGV8_VALUE
 SWIG_From_size_t  (size_t value)
-{    
+{
 #ifdef SWIG_LONG_LONG_AVAILABLE
   if (sizeof(size_t) <= sizeof(unsigned long)) {
 #endif
@@ -2069,13 +2069,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_UNKNOWN(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_UNKNOWN(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2088,13 +2088,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_BOOLEAN(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_BOOLEAN(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(1));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2107,13 +2107,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_NUMBER(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_NUMBER(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(2));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2126,13 +2126,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_STRING(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_STRING(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(3));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2145,13 +2145,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_NAME(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_NAME(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(4));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2164,13 +2164,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_ARRAY(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_ARRAY(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(5));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2183,13 +2183,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_DICTIONARY(v8::Local<v8::String> prop
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_DICTIONARY(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(6));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2202,13 +2202,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_STREAM(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_STREAM(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(7));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2221,13 +2221,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_NULLOBJ(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_NULLOBJ(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(8));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2240,13 +2240,13 @@ static SwigV8ReturnValue _wrap_FPDF_OBJECT_REFERENCE(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap_FPDF_OBJECT_REFERENCE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(9));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2259,13 +2259,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_UNKNOWN(v8::Local<v8::String>
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_UNKNOWN(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_UNKNOWN));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2278,13 +2278,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL(v8::Local<v8::String> pr
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_FILL));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2297,13 +2297,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_STROKE(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_STROKE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_STROKE));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2316,13 +2316,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL_STROKE(v8::Local<v8::Str
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL_STROKE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_FILL_STROKE));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2335,13 +2335,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_INVISIBLE(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_INVISIBLE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_INVISIBLE));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2354,13 +2354,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL_CLIP(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL_CLIP(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_FILL_CLIP));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2373,13 +2373,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_STROKE_CLIP(v8::Local<v8::Str
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_STROKE_CLIP(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_STROKE_CLIP));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2392,13 +2392,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL_STROKE_CLIP(v8::Local<v8
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_FILL_STROKE_CLIP(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_FILL_STROKE_CLIP));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2411,13 +2411,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_CLIP(v8::Local<v8::String> pr
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_CLIP(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_CLIP));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2430,13 +2430,13 @@ static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_LAST(v8::Local<v8::String> pr
   static SwigV8ReturnValue _wrap_FPDF_TEXTRENDERMODE_LAST(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(FPDF_TEXTRENDERMODE_LAST));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2449,13 +2449,13 @@ static SwigV8ReturnValue _wrap_DuplexUndefined(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_DuplexUndefined(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(DuplexUndefined));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2468,13 +2468,13 @@ static SwigV8ReturnValue _wrap_Simplex(v8::Local<v8::String> property, const Swi
   static SwigV8ReturnValue _wrap_Simplex(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(Simplex));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2487,13 +2487,13 @@ static SwigV8ReturnValue _wrap_DuplexFlipShortEdge(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_DuplexFlipShortEdge(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(DuplexFlipShortEdge));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2506,13 +2506,13 @@ static SwigV8ReturnValue _wrap_DuplexFlipLongEdge(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_DuplexFlipLongEdge(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(DuplexFlipLongEdge));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2525,7 +2525,7 @@ static void _wrap_FPDF_BSTR_str_set(v8::Local<v8::String> property, v8::Local<v8
   static void _wrap_FPDF_BSTR_str_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_BSTR_ *arg1 = (FPDF_BSTR_ *) 0 ;
     char *arg2 = (char *) 0 ;
     void *argp1 = 0 ;
@@ -2533,10 +2533,10 @@ static void _wrap_FPDF_BSTR_str_set(v8::Local<v8::String> property, v8::Local<v8
     int res2 ;
     char *buf2 = 0 ;
     int alloc2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_BSTR_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_str_set" "', argument " "1"" of type '" "FPDF_BSTR_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_str_set" "', argument " "1"" of type '" "FPDF_BSTR_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_BSTR_ * >(argp1);
     res2 = SWIG_AsCharPtrAndSize(value, &buf2, NULL, &alloc2);
@@ -2551,9 +2551,9 @@ static void _wrap_FPDF_BSTR_str_set(v8::Local<v8::String> property, v8::Local<v8
     } else {
       arg1->str = 0;
     }
-    
+
     if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-    
+
     goto fail;
   fail:
     return;
@@ -2566,24 +2566,24 @@ static SwigV8ReturnValue _wrap_FPDF_BSTR_str_get(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_FPDF_BSTR_str_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_BSTR_ *arg1 = (FPDF_BSTR_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     char *result = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_BSTR_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_str_get" "', argument " "1"" of type '" "FPDF_BSTR_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_str_get" "', argument " "1"" of type '" "FPDF_BSTR_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_BSTR_ * >(argp1);
     result = (char *) ((arg1)->str);
     jsresult = SWIG_FromCharPtr((const char *)result);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2596,28 +2596,28 @@ static void _wrap_FPDF_BSTR_len_set(v8::Local<v8::String> property, v8::Local<v8
   static void _wrap_FPDF_BSTR_len_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_BSTR_ *arg1 = (FPDF_BSTR_ *) 0 ;
     int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_BSTR_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_len_set" "', argument " "1"" of type '" "FPDF_BSTR_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_len_set" "', argument " "1"" of type '" "FPDF_BSTR_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_BSTR_ * >(argp1);
     ecode2 = SWIG_AsVal_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_BSTR_len_set" "', argument " "2"" of type '" "int""'");
-    } 
+    }
     arg2 = static_cast< int >(val2);
     if (arg1) (arg1)->len = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -2630,24 +2630,24 @@ static SwigV8ReturnValue _wrap_FPDF_BSTR_len_get(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_FPDF_BSTR_len_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_BSTR_ *arg1 = (FPDF_BSTR_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_BSTR_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_len_get" "', argument " "1"" of type '" "FPDF_BSTR_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_BSTR_len_get" "', argument " "1"" of type '" "FPDF_BSTR_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_BSTR_ * >(argp1);
     result = (int) ((arg1)->len);
     jsresult = SWIG_From_int(static_cast< int >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2656,18 +2656,18 @@ static SwigV8ReturnValue _wrap_FPDF_BSTR_len_get(v8::Local<v8::String> property,
 
 static SwigV8ReturnValue _wrap_new_FPDF_BSTR(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FPDF_BSTR_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FPDF_BSTR.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FPDF_BSTR.");
   result = (FPDF_BSTR_ *)new FPDF_BSTR_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FPDF_BSTR_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -2690,13 +2690,13 @@ static void _wrap_delete_FPDF_BSTR(v8::Persistent<v8::Value> object, void *param
         static void _wrap_delete_FPDF_BSTR(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FPDF_BSTR_ * arg1 = (FPDF_BSTR_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -2717,28 +2717,28 @@ static void _wrap_FS_MATRIX_a_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_FS_MATRIX_a_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_a_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_a_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_MATRIX_a_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->a = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -2751,24 +2751,24 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_a_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FS_MATRIX_a_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_a_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_a_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     result = (float) ((arg1)->a);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2781,28 +2781,28 @@ static void _wrap_FS_MATRIX_b_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_FS_MATRIX_b_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_b_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_b_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_MATRIX_b_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->b = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -2815,24 +2815,24 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_b_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FS_MATRIX_b_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_b_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_b_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     result = (float) ((arg1)->b);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2845,28 +2845,28 @@ static void _wrap_FS_MATRIX_c_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_FS_MATRIX_c_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_c_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_c_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_MATRIX_c_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->c = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -2879,24 +2879,24 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_c_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FS_MATRIX_c_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_c_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_c_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     result = (float) ((arg1)->c);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2909,28 +2909,28 @@ static void _wrap_FS_MATRIX_d_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_FS_MATRIX_d_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_d_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_d_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_MATRIX_d_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->d = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -2943,24 +2943,24 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_d_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FS_MATRIX_d_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_d_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_d_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     result = (float) ((arg1)->d);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -2973,28 +2973,28 @@ static void _wrap_FS_MATRIX_e_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_FS_MATRIX_e_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_e_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_e_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_MATRIX_e_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->e = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3007,24 +3007,24 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_e_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FS_MATRIX_e_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_e_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_e_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     result = (float) ((arg1)->e);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3037,28 +3037,28 @@ static void _wrap_FS_MATRIX_f_set(v8::Local<v8::String> property, v8::Local<v8::
   static void _wrap_FS_MATRIX_f_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_f_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_f_set" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_MATRIX_f_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->f = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3071,24 +3071,24 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_f_get(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FS_MATRIX_f_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_MATRIX_ *arg1 = (_FS_MATRIX_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_f_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_MATRIX_f_get" "', argument " "1"" of type '" "_FS_MATRIX_ *""'");
     }
     arg1 = reinterpret_cast< _FS_MATRIX_ * >(argp1);
     result = (float) ((arg1)->f);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3097,18 +3097,18 @@ static SwigV8ReturnValue _wrap_FS_MATRIX_f_get(v8::Local<v8::String> property, c
 
 static SwigV8ReturnValue _wrap_new_FS_MATRIX(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   _FS_MATRIX_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FS_MATRIX.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FS_MATRIX.");
   result = (_FS_MATRIX_ *)new _FS_MATRIX_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p__FS_MATRIX_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3131,13 +3131,13 @@ static void _wrap_delete_FS_MATRIX(v8::Persistent<v8::Value> object, void *param
         static void _wrap_delete_FS_MATRIX(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             _FS_MATRIX_ * arg1 = (_FS_MATRIX_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -3158,28 +3158,28 @@ static void _wrap__FS_RECTF__left_set(v8::Local<v8::String> property, v8::Local<
   static void _wrap__FS_RECTF__left_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__left_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__left_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "_FS_RECTF__left_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->left = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3192,24 +3192,24 @@ static SwigV8ReturnValue _wrap__FS_RECTF__left_get(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap__FS_RECTF__left_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__left_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__left_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     result = (float) ((arg1)->left);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3222,28 +3222,28 @@ static void _wrap__FS_RECTF__top_set(v8::Local<v8::String> property, v8::Local<v
   static void _wrap__FS_RECTF__top_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__top_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__top_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "_FS_RECTF__top_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->top = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3256,24 +3256,24 @@ static SwigV8ReturnValue _wrap__FS_RECTF__top_get(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap__FS_RECTF__top_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__top_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__top_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     result = (float) ((arg1)->top);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3286,28 +3286,28 @@ static void _wrap__FS_RECTF__right_set(v8::Local<v8::String> property, v8::Local
   static void _wrap__FS_RECTF__right_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__right_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__right_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "_FS_RECTF__right_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->right = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3320,24 +3320,24 @@ static SwigV8ReturnValue _wrap__FS_RECTF__right_get(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap__FS_RECTF__right_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__right_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__right_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     result = (float) ((arg1)->right);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3350,28 +3350,28 @@ static void _wrap__FS_RECTF__bottom_set(v8::Local<v8::String> property, v8::Loca
   static void _wrap__FS_RECTF__bottom_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__bottom_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__bottom_set" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "_FS_RECTF__bottom_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->bottom = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3384,24 +3384,24 @@ static SwigV8ReturnValue _wrap__FS_RECTF__bottom_get(v8::Local<v8::String> prope
   static SwigV8ReturnValue _wrap__FS_RECTF__bottom_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     _FS_RECTF_ *arg1 = (_FS_RECTF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__bottom_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "_FS_RECTF__bottom_get" "', argument " "1"" of type '" "_FS_RECTF_ *""'");
     }
     arg1 = reinterpret_cast< _FS_RECTF_ * >(argp1);
     result = (float) ((arg1)->bottom);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3410,18 +3410,18 @@ static SwigV8ReturnValue _wrap__FS_RECTF__bottom_get(v8::Local<v8::String> prope
 
 static SwigV8ReturnValue _wrap_new__FS_RECTF_(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   _FS_RECTF_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new__FS_RECTF_.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new__FS_RECTF_.");
   result = (_FS_RECTF_ *)new _FS_RECTF_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p__FS_RECTF_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3444,13 +3444,13 @@ static void _wrap_delete__FS_RECTF_(v8::Persistent<v8::Value> object, void *para
         static void _wrap_delete__FS_RECTF_(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             _FS_RECTF_ * arg1 = (_FS_RECTF_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -3471,28 +3471,28 @@ static void _wrap_FS_SIZEF__width_set(v8::Local<v8::String> property, v8::Local<
   static void _wrap_FS_SIZEF__width_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FS_SIZEF_ *arg1 = (FS_SIZEF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_SIZEF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__width_set" "', argument " "1"" of type '" "FS_SIZEF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__width_set" "', argument " "1"" of type '" "FS_SIZEF_ *""'");
     }
     arg1 = reinterpret_cast< FS_SIZEF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_SIZEF__width_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->width = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3505,24 +3505,24 @@ static SwigV8ReturnValue _wrap_FS_SIZEF__width_get(v8::Local<v8::String> propert
   static SwigV8ReturnValue _wrap_FS_SIZEF__width_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FS_SIZEF_ *arg1 = (FS_SIZEF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_SIZEF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__width_get" "', argument " "1"" of type '" "FS_SIZEF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__width_get" "', argument " "1"" of type '" "FS_SIZEF_ *""'");
     }
     arg1 = reinterpret_cast< FS_SIZEF_ * >(argp1);
     result = (float) ((arg1)->width);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3535,28 +3535,28 @@ static void _wrap_FS_SIZEF__height_set(v8::Local<v8::String> property, v8::Local
   static void _wrap_FS_SIZEF__height_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FS_SIZEF_ *arg1 = (FS_SIZEF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_SIZEF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__height_set" "', argument " "1"" of type '" "FS_SIZEF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__height_set" "', argument " "1"" of type '" "FS_SIZEF_ *""'");
     }
     arg1 = reinterpret_cast< FS_SIZEF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_SIZEF__height_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->height = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3569,24 +3569,24 @@ static SwigV8ReturnValue _wrap_FS_SIZEF__height_get(v8::Local<v8::String> proper
   static SwigV8ReturnValue _wrap_FS_SIZEF__height_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FS_SIZEF_ *arg1 = (FS_SIZEF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_SIZEF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__height_get" "', argument " "1"" of type '" "FS_SIZEF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_SIZEF__height_get" "', argument " "1"" of type '" "FS_SIZEF_ *""'");
     }
     arg1 = reinterpret_cast< FS_SIZEF_ * >(argp1);
     result = (float) ((arg1)->height);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3595,18 +3595,18 @@ static SwigV8ReturnValue _wrap_FS_SIZEF__height_get(v8::Local<v8::String> proper
 
 static SwigV8ReturnValue _wrap_new_FS_SIZEF_(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FS_SIZEF_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FS_SIZEF_.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FS_SIZEF_.");
   result = (FS_SIZEF_ *)new FS_SIZEF_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FS_SIZEF_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3629,13 +3629,13 @@ static void _wrap_delete_FS_SIZEF_(v8::Persistent<v8::Value> object, void *param
         static void _wrap_delete_FS_SIZEF_(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FS_SIZEF_ * arg1 = (FS_SIZEF_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -3656,28 +3656,28 @@ static void _wrap_FS_POINTF__x_set(v8::Local<v8::String> property, v8::Local<v8:
   static void _wrap_FS_POINTF__x_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FS_POINTF_ *arg1 = (FS_POINTF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_POINTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__x_set" "', argument " "1"" of type '" "FS_POINTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__x_set" "', argument " "1"" of type '" "FS_POINTF_ *""'");
     }
     arg1 = reinterpret_cast< FS_POINTF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_POINTF__x_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->x = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3690,24 +3690,24 @@ static SwigV8ReturnValue _wrap_FS_POINTF__x_get(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_FS_POINTF__x_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FS_POINTF_ *arg1 = (FS_POINTF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_POINTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__x_get" "', argument " "1"" of type '" "FS_POINTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__x_get" "', argument " "1"" of type '" "FS_POINTF_ *""'");
     }
     arg1 = reinterpret_cast< FS_POINTF_ * >(argp1);
     result = (float) ((arg1)->x);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3720,28 +3720,28 @@ static void _wrap_FS_POINTF__y_set(v8::Local<v8::String> property, v8::Local<v8:
   static void _wrap_FS_POINTF__y_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FS_POINTF_ *arg1 = (FS_POINTF_ *) 0 ;
     float arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_POINTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__y_set" "', argument " "1"" of type '" "FS_POINTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__y_set" "', argument " "1"" of type '" "FS_POINTF_ *""'");
     }
     arg1 = reinterpret_cast< FS_POINTF_ * >(argp1);
     ecode2 = SWIG_AsVal_float(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FS_POINTF__y_set" "', argument " "2"" of type '" "float""'");
-    } 
+    }
     arg2 = static_cast< float >(val2);
     if (arg1) (arg1)->y = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3754,24 +3754,24 @@ static SwigV8ReturnValue _wrap_FS_POINTF__y_get(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_FS_POINTF__y_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FS_POINTF_ *arg1 = (FS_POINTF_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     float result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FS_POINTF_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__y_get" "', argument " "1"" of type '" "FS_POINTF_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FS_POINTF__y_get" "', argument " "1"" of type '" "FS_POINTF_ *""'");
     }
     arg1 = reinterpret_cast< FS_POINTF_ * >(argp1);
     result = (float) ((arg1)->y);
     jsresult = SWIG_From_float(static_cast< float >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3780,18 +3780,18 @@ static SwigV8ReturnValue _wrap_FS_POINTF__y_get(v8::Local<v8::String> property, 
 
 static SwigV8ReturnValue _wrap_new_FS_POINTF_(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FS_POINTF_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FS_POINTF_.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FS_POINTF_.");
   result = (FS_POINTF_ *)new FS_POINTF_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FS_POINTF_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3814,13 +3814,13 @@ static void _wrap_delete_FS_POINTF_(v8::Persistent<v8::Value> object, void *para
         static void _wrap_delete_FS_POINTF_(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FS_POINTF_ * arg1 = (FS_POINTF_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -3837,16 +3837,16 @@ static void _wrap_delete_FS_POINTF_(v8::Persistent<v8::Value> object, void *para
 
 static SwigV8ReturnValue _wrap_FPDF_InitLibrary(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
-  
+
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_InitLibrary.");
-  
+
   FPDF_InitLibrary();
   jsresult = SWIGV8_UNDEFINED();
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -3859,28 +3859,28 @@ static void _wrap_FPDF_LIBRARY_CONFIG_version_set(v8::Local<v8::String> property
   static void _wrap_FPDF_LIBRARY_CONFIG_version_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_version_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_version_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     ecode2 = SWIG_AsVal_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_LIBRARY_CONFIG_version_set" "', argument " "2"" of type '" "int""'");
-    } 
+    }
     arg2 = static_cast< int >(val2);
     if (arg1) (arg1)->version = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3893,24 +3893,24 @@ static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_version_get(v8::Local<v8::Str
   static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_version_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_version_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_version_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     result = (int) ((arg1)->version);
     jsresult = SWIG_From_int(static_cast< int >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3923,28 +3923,28 @@ static void _wrap_FPDF_LIBRARY_CONFIG_m_pUserFontPaths_set(v8::Local<v8::String>
   static void _wrap_FPDF_LIBRARY_CONFIG_m_pUserFontPaths_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     char **arg2 = (char **) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *argp2 = 0 ;
     int res2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pUserFontPaths_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pUserFontPaths_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     res2 = SWIG_ConvertPtr(value, &argp2,SWIGTYPE_p_p_char, 0 |  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_LIBRARY_CONFIG_m_pUserFontPaths_set" "', argument " "2"" of type '" "char const **""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_LIBRARY_CONFIG_m_pUserFontPaths_set" "', argument " "2"" of type '" "char const **""'");
     }
     arg2 = reinterpret_cast< char ** >(argp2);
     if (arg1) (arg1)->m_pUserFontPaths = (char const **)arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -3957,24 +3957,24 @@ static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pUserFontPaths_get(v8::Loca
   static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pUserFontPaths_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     char **result = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pUserFontPaths_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pUserFontPaths_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     result = (char **) ((arg1)->m_pUserFontPaths);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_p_char, 0 |  0 );
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -3987,26 +3987,26 @@ static void _wrap_FPDF_LIBRARY_CONFIG_m_pIsolate_set(v8::Local<v8::String> prope
   static void _wrap_FPDF_LIBRARY_CONFIG_m_pIsolate_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *arg2 = (void *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pIsolate_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pIsolate_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     res2 = SWIG_ConvertPtr(value,SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_LIBRARY_CONFIG_m_pIsolate_set" "', argument " "2"" of type '" "void *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_LIBRARY_CONFIG_m_pIsolate_set" "', argument " "2"" of type '" "void *""'");
     }
     if (arg1) (arg1)->m_pIsolate = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4019,24 +4019,24 @@ static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pIsolate_get(v8::Local<v8::
   static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pIsolate_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *result = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pIsolate_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pIsolate_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     result = (void *) ((arg1)->m_pIsolate);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4049,28 +4049,28 @@ static void _wrap_FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_set(v8::Local<v8::String>
   static void _wrap_FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     unsigned int arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned int val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     ecode2 = SWIG_AsVal_unsigned_SS_int(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_set" "', argument " "2"" of type '" "unsigned int""'");
-    } 
+    }
     arg2 = static_cast< unsigned int >(val2);
     if (arg1) (arg1)->m_v8EmbedderSlot = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4083,24 +4083,24 @@ static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_get(v8::Loca
   static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned int result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_v8EmbedderSlot_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     result = (unsigned int) ((arg1)->m_v8EmbedderSlot);
     jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4113,26 +4113,26 @@ static void _wrap_FPDF_LIBRARY_CONFIG_m_pPlatform_set(v8::Local<v8::String> prop
   static void _wrap_FPDF_LIBRARY_CONFIG_m_pPlatform_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *arg2 = (void *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pPlatform_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pPlatform_set" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     res2 = SWIG_ConvertPtr(value,SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_LIBRARY_CONFIG_m_pPlatform_set" "', argument " "2"" of type '" "void *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_LIBRARY_CONFIG_m_pPlatform_set" "', argument " "2"" of type '" "void *""'");
     }
     if (arg1) (arg1)->m_pPlatform = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4145,24 +4145,24 @@ static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pPlatform_get(v8::Local<v8:
   static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pPlatform_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_LIBRARY_CONFIG_ *arg1 = (FPDF_LIBRARY_CONFIG_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *result = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pPlatform_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LIBRARY_CONFIG_m_pPlatform_get" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG_ * >(argp1);
     result = (void *) ((arg1)->m_pPlatform);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4171,18 +4171,18 @@ static SwigV8ReturnValue _wrap_FPDF_LIBRARY_CONFIG_m_pPlatform_get(v8::Local<v8:
 
 static SwigV8ReturnValue _wrap_new_FPDF_LIBRARY_CONFIG(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FPDF_LIBRARY_CONFIG_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FPDF_LIBRARY_CONFIG.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FPDF_LIBRARY_CONFIG.");
   result = (FPDF_LIBRARY_CONFIG_ *)new FPDF_LIBRARY_CONFIG_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4205,13 +4205,13 @@ static void _wrap_delete_FPDF_LIBRARY_CONFIG(v8::Persistent<v8::Value> object, v
         static void _wrap_delete_FPDF_LIBRARY_CONFIG(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FPDF_LIBRARY_CONFIG_ * arg1 = (FPDF_LIBRARY_CONFIG_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -4228,25 +4228,25 @@ static void _wrap_delete_FPDF_LIBRARY_CONFIG(v8::Persistent<v8::Value> object, v
 
 static SwigV8ReturnValue _wrap_FPDF_InitLibraryWithConfig(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_LIBRARY_CONFIG *arg1 = (FPDF_LIBRARY_CONFIG *) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_InitLibraryWithConfig.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_FPDF_LIBRARY_CONFIG_, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_InitLibraryWithConfig" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_InitLibraryWithConfig" "', argument " "1"" of type '" "FPDF_LIBRARY_CONFIG const *""'");
   }
   arg1 = reinterpret_cast< FPDF_LIBRARY_CONFIG * >(argp1);
   FPDF_InitLibraryWithConfig((FPDF_LIBRARY_CONFIG_ const *)arg1);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4255,16 +4255,16 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_DestroyLibrary(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
-  
+
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_DestroyLibrary.");
-  
+
   FPDF_DestroyLibrary();
   jsresult = SWIGV8_UNDEFINED();
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4277,13 +4277,13 @@ static SwigV8ReturnValue _wrap_FPDF_POLICY_MACHINETIME_ACCESS(v8::Local<v8::Stri
   static SwigV8ReturnValue _wrap_FPDF_POLICY_MACHINETIME_ACCESS(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4292,7 +4292,7 @@ static SwigV8ReturnValue _wrap_FPDF_POLICY_MACHINETIME_ACCESS(v8::Local<v8::Stri
 
 static SwigV8ReturnValue _wrap_FPDF_SetSandBoxPolicy(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DWORD arg1 ;
   FPDF_BOOL arg2 ;
@@ -4300,26 +4300,26 @@ static SwigV8ReturnValue _wrap_FPDF_SetSandBoxPolicy(const SwigV8Arguments &args
   int ecode1 = 0 ;
   int val2 ;
   int ecode2 = 0 ;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_SetSandBoxPolicy.");
-  
+
   ecode1 = SWIG_AsVal_unsigned_SS_long(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "FPDF_SetSandBoxPolicy" "', argument " "1"" of type '" "FPDF_DWORD""'");
-  } 
+  }
   arg1 = static_cast< FPDF_DWORD >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_SetSandBoxPolicy" "', argument " "2"" of type '" "FPDF_BOOL""'");
-  } 
+  }
   arg2 = static_cast< FPDF_BOOL >(val2);
   FPDF_SetSandBoxPolicy(arg1,arg2);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
-  
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4328,7 +4328,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_LoadDocument(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_STRING arg1 = (FPDF_STRING) 0 ;
   FPDF_BYTESTRING arg2 = (FPDF_BYTESTRING) 0 ;
@@ -4339,9 +4339,9 @@ static SwigV8ReturnValue _wrap_FPDF_LoadDocument(const SwigV8Arguments &args) {
   char *buf2 = 0 ;
   int alloc2 = 0 ;
   FPDF_DOCUMENT result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_LoadDocument.");
-  
+
   res1 = SWIG_AsCharPtrAndSize(args[0], &buf1, NULL, &alloc1);
   if (!SWIG_IsOK(res1)) {
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadDocument" "', argument " "1"" of type '" "FPDF_STRING""'");
@@ -4356,9 +4356,9 @@ static SwigV8ReturnValue _wrap_FPDF_LoadDocument(const SwigV8Arguments &args) {
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (alloc1 == SWIG_NEWOBJ) delete[] buf1;
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4367,7 +4367,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_LoadMemDocument(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   void *arg1 = (void *) 0 ;
   int arg2 ;
@@ -4379,17 +4379,17 @@ static SwigV8ReturnValue _wrap_FPDF_LoadMemDocument(const SwigV8Arguments &args)
   char *buf3 = 0 ;
   int alloc3 = 0 ;
   FPDF_DOCUMENT result;
-  
+
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_LoadMemDocument.");
-  
+
   res1 = SWIG_ConvertPtr(args[0],SWIG_as_voidptrptr(&arg1), 0, 0);
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadMemDocument" "', argument " "1"" of type '" "void const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadMemDocument" "', argument " "1"" of type '" "void const *""'");
   }
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_LoadMemDocument" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   res3 = SWIG_AsCharPtrAndSize(args[2], &buf3, NULL, &alloc3);
   if (!SWIG_IsOK(res3)) {
@@ -4398,12 +4398,12 @@ static SwigV8ReturnValue _wrap_FPDF_LoadMemDocument(const SwigV8Arguments &args)
   arg3 = reinterpret_cast< FPDF_BYTESTRING >(buf3);
   result = (FPDF_DOCUMENT)FPDF_LoadMemDocument((void const *)arg1,arg2,(char const *)arg3);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
-  
-  
+
+
   if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4412,7 +4412,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_LoadMemDocument64(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   void *arg1 = (void *) 0 ;
   size_t arg2 ;
@@ -4424,17 +4424,17 @@ static SwigV8ReturnValue _wrap_FPDF_LoadMemDocument64(const SwigV8Arguments &arg
   char *buf3 = 0 ;
   int alloc3 = 0 ;
   FPDF_DOCUMENT result;
-  
+
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_LoadMemDocument64.");
-  
+
   res1 = SWIG_ConvertPtr(args[0],SWIG_as_voidptrptr(&arg1), 0, 0);
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadMemDocument64" "', argument " "1"" of type '" "void const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadMemDocument64" "', argument " "1"" of type '" "void const *""'");
   }
   ecode2 = SWIG_AsVal_size_t(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_LoadMemDocument64" "', argument " "2"" of type '" "size_t""'");
-  } 
+  }
   arg2 = static_cast< size_t >(val2);
   res3 = SWIG_AsCharPtrAndSize(args[2], &buf3, NULL, &alloc3);
   if (!SWIG_IsOK(res3)) {
@@ -4443,12 +4443,12 @@ static SwigV8ReturnValue _wrap_FPDF_LoadMemDocument64(const SwigV8Arguments &arg
   arg3 = reinterpret_cast< FPDF_BYTESTRING >(buf3);
   result = (FPDF_DOCUMENT)FPDF_LoadMemDocument64((void const *)arg1,arg2,(char const *)arg3);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
-  
-  
+
+
   if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4461,28 +4461,28 @@ static void _wrap_FPDF_FILEACCESS_m_FileLen_set(v8::Local<v8::String> property, 
   static void _wrap_FPDF_FILEACCESS_m_FileLen_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
     unsigned long arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned long val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_FileLen_set" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_FileLen_set" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
     ecode2 = SWIG_AsVal_unsigned_SS_long(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_FILEACCESS_m_FileLen_set" "', argument " "2"" of type '" "unsigned long""'");
-    } 
+    }
     arg2 = static_cast< unsigned long >(val2);
     if (arg1) (arg1)->m_FileLen = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4495,24 +4495,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_FileLen_get(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_FileLen_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned long result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_FileLen_get" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_FileLen_get" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
     result = (unsigned long) ((arg1)->m_FileLen);
     jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4525,27 +4525,27 @@ static void _wrap_FPDF_FILEACCESS_m_GetBlock_set(v8::Local<v8::String> property,
   static void _wrap_FPDF_FILEACCESS_m_GetBlock_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
     int (*arg2)(void *,unsigned long,unsigned char *,unsigned long) = (int (*)(void *,unsigned long,unsigned char *,unsigned long)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_GetBlock_set" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_GetBlock_set" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEACCESS_m_GetBlock_set" "', argument " "2"" of type '" "int (*)(void *,unsigned long,unsigned char *,unsigned long)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEACCESS_m_GetBlock_set" "', argument " "2"" of type '" "int (*)(void *,unsigned long,unsigned char *,unsigned long)""'");
       }
     }
     if (arg1) (arg1)->m_GetBlock = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4558,24 +4558,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_GetBlock_get(v8::Local<v8::Stri
   static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_GetBlock_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int (*result)(void *,unsigned long,unsigned char *,unsigned long) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_GetBlock_get" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_GetBlock_get" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
     result = (int (*)(void *,unsigned long,unsigned char *,unsigned long)) ((arg1)->m_GetBlock);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4588,26 +4588,26 @@ static void _wrap_FPDF_FILEACCESS_m_Param_set(v8::Local<v8::String> property, v8
   static void _wrap_FPDF_FILEACCESS_m_Param_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
     void *arg2 = (void *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_Param_set" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_Param_set" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
     res2 = SWIG_ConvertPtr(value,SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_FILEACCESS_m_Param_set" "', argument " "2"" of type '" "void *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_FILEACCESS_m_Param_set" "', argument " "2"" of type '" "void *""'");
     }
     if (arg1) (arg1)->m_Param = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4620,24 +4620,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_Param_get(v8::Local<v8::String>
   static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_Param_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *result = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_Param_get" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEACCESS_m_Param_get" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
     result = (void *) ((arg1)->m_Param);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4646,18 +4646,18 @@ static SwigV8ReturnValue _wrap_FPDF_FILEACCESS_m_Param_get(v8::Local<v8::String>
 
 static SwigV8ReturnValue _wrap_new_FPDF_FILEACCESS(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FPDF_FILEACCESS *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FPDF_FILEACCESS.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FPDF_FILEACCESS.");
   result = (FPDF_FILEACCESS *)new FPDF_FILEACCESS();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FPDF_FILEACCESS, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -4680,13 +4680,13 @@ static void _wrap_delete_FPDF_FILEACCESS(v8::Persistent<v8::Value> object, void 
         static void _wrap_delete_FPDF_FILEACCESS(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FPDF_FILEACCESS * arg1 = (FPDF_FILEACCESS *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -4707,26 +4707,26 @@ static void _wrap_FPDF_FILEHANDLER_clientData_set(v8::Local<v8::String> property
   static void _wrap_FPDF_FILEHANDLER_clientData_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *arg2 = (void *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     int res2 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_clientData_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_clientData_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     res2 = SWIG_ConvertPtr(value,SWIG_as_voidptrptr(&arg2), 0, SWIG_POINTER_DISOWN);
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_FILEHANDLER_clientData_set" "', argument " "2"" of type '" "void *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_FILEHANDLER_clientData_set" "', argument " "2"" of type '" "void *""'");
     }
     if (arg1) (arg1)->clientData = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4739,24 +4739,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_clientData_get(v8::Local<v8::Str
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_clientData_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void *result = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_clientData_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_clientData_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (void *) ((arg1)->clientData);
     jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4769,27 +4769,27 @@ static void _wrap_FPDF_FILEHANDLER_Release_set(v8::Local<v8::String> property, v
   static void _wrap_FPDF_FILEHANDLER_Release_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void (*arg2)(void *) = (void (*)(void *)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Release_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Release_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void__void);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_Release_set" "', argument " "2"" of type '" "void (*)(void *)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_Release_set" "', argument " "2"" of type '" "void (*)(void *)""'");
       }
     }
     if (arg1) (arg1)->Release = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4802,24 +4802,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Release_get(v8::Local<v8::String
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Release_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     void (*result)(void *) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Release_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Release_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (void (*)(void *)) ((arg1)->Release);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void__void);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4832,27 +4832,27 @@ static void _wrap_FPDF_FILEHANDLER_GetSize_set(v8::Local<v8::String> property, v
   static void _wrap_FPDF_FILEHANDLER_GetSize_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     FPDF_DWORD (*arg2)(void *) = (FPDF_DWORD (*)(void *)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_GetSize_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_GetSize_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void__unsigned_long);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_GetSize_set" "', argument " "2"" of type '" "FPDF_DWORD (*)(void *)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_GetSize_set" "', argument " "2"" of type '" "FPDF_DWORD (*)(void *)""'");
       }
     }
     if (arg1) (arg1)->GetSize = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4865,24 +4865,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_GetSize_get(v8::Local<v8::String
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_GetSize_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_DWORD (*result)(void *) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_GetSize_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_GetSize_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (FPDF_DWORD (*)(void *)) ((arg1)->GetSize);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void__unsigned_long);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4895,27 +4895,27 @@ static void _wrap_FPDF_FILEHANDLER_ReadBlock_set(v8::Local<v8::String> property,
   static void _wrap_FPDF_FILEHANDLER_ReadBlock_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     FPDF_RESULT (*arg2)(void *,FPDF_DWORD,void *,FPDF_DWORD) = (FPDF_RESULT (*)(void *,FPDF_DWORD,void *,FPDF_DWORD)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_ReadBlock_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_ReadBlock_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_ReadBlock_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *,FPDF_DWORD,void *,FPDF_DWORD)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_ReadBlock_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *,FPDF_DWORD,void *,FPDF_DWORD)""'");
       }
     }
     if (arg1) (arg1)->ReadBlock = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4928,24 +4928,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_ReadBlock_get(v8::Local<v8::Stri
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_ReadBlock_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_RESULT (*result)(void *,FPDF_DWORD,void *,FPDF_DWORD) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_ReadBlock_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_ReadBlock_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (FPDF_RESULT (*)(void *,FPDF_DWORD,void *,FPDF_DWORD)) ((arg1)->ReadBlock);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -4958,27 +4958,27 @@ static void _wrap_FPDF_FILEHANDLER_WriteBlock_set(v8::Local<v8::String> property
   static void _wrap_FPDF_FILEHANDLER_WriteBlock_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     FPDF_RESULT (*arg2)(void *,FPDF_DWORD,void const *,FPDF_DWORD) = (FPDF_RESULT (*)(void *,FPDF_DWORD,void const *,FPDF_DWORD)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_WriteBlock_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_WriteBlock_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_WriteBlock_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *,FPDF_DWORD,void const *,FPDF_DWORD)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_WriteBlock_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *,FPDF_DWORD,void const *,FPDF_DWORD)""'");
       }
     }
     if (arg1) (arg1)->WriteBlock = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -4991,24 +4991,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_WriteBlock_get(v8::Local<v8::Str
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_WriteBlock_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_RESULT (*result)(void *,FPDF_DWORD,void const *,FPDF_DWORD) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_WriteBlock_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_WriteBlock_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (FPDF_RESULT (*)(void *,FPDF_DWORD,void const *,FPDF_DWORD)) ((arg1)->WriteBlock);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5021,27 +5021,27 @@ static void _wrap_FPDF_FILEHANDLER_Flush_set(v8::Local<v8::String> property, v8:
   static void _wrap_FPDF_FILEHANDLER_Flush_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     FPDF_RESULT (*arg2)(void *) = (FPDF_RESULT (*)(void *)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Flush_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Flush_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void__int);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_Flush_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_Flush_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *)""'");
       }
     }
     if (arg1) (arg1)->Flush = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -5054,24 +5054,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Flush_get(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Flush_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_RESULT (*result)(void *) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Flush_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Flush_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (FPDF_RESULT (*)(void *)) ((arg1)->Flush);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void__int);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5084,27 +5084,27 @@ static void _wrap_FPDF_FILEHANDLER_Truncate_set(v8::Local<v8::String> property, 
   static void _wrap_FPDF_FILEHANDLER_Truncate_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     FPDF_RESULT (*arg2)(void *,FPDF_DWORD) = (FPDF_RESULT (*)(void *,FPDF_DWORD)) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Truncate_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Truncate_set" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     {
       int res = SWIG_ConvertFunctionPtr(value, (void**)(&arg2), SWIGTYPE_p_f_p_void_unsigned_long__int);
       if (!SWIG_IsOK(res)) {
-        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_Truncate_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *,FPDF_DWORD)""'"); 
+        SWIG_exception_fail(SWIG_ArgError(res), "in method '" "FPDF_FILEHANDLER_Truncate_set" "', argument " "2"" of type '" "FPDF_RESULT (*)(void *,FPDF_DWORD)""'");
       }
     }
     if (arg1) (arg1)->Truncate = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -5117,24 +5117,24 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Truncate_get(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Truncate_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_FILEHANDLER_ *arg1 = (FPDF_FILEHANDLER_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_RESULT (*result)(void *,FPDF_DWORD) = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_FILEHANDLER_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Truncate_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_FILEHANDLER_Truncate_get" "', argument " "1"" of type '" "FPDF_FILEHANDLER_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_FILEHANDLER_ * >(argp1);
     result = (FPDF_RESULT (*)(void *,FPDF_DWORD)) ((arg1)->Truncate);
     jsresult = SWIG_NewFunctionPtrObj((void *)(result), SWIGTYPE_p_f_p_void_unsigned_long__int);
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5143,18 +5143,18 @@ static SwigV8ReturnValue _wrap_FPDF_FILEHANDLER_Truncate_get(v8::Local<v8::Strin
 
 static SwigV8ReturnValue _wrap_new_FPDF_FILEHANDLER(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FPDF_FILEHANDLER_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FPDF_FILEHANDLER.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FPDF_FILEHANDLER.");
   result = (FPDF_FILEHANDLER_ *)new FPDF_FILEHANDLER_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FPDF_FILEHANDLER_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5177,13 +5177,13 @@ static void _wrap_delete_FPDF_FILEHANDLER(v8::Persistent<v8::Value> object, void
         static void _wrap_delete_FPDF_FILEHANDLER(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FPDF_FILEHANDLER_ * arg1 = (FPDF_FILEHANDLER_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -5200,7 +5200,7 @@ static void _wrap_delete_FPDF_FILEHANDLER(v8::Persistent<v8::Value> object, void
 
 static SwigV8ReturnValue _wrap_FPDF_LoadCustomDocument(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_FILEACCESS *arg1 = (FPDF_FILEACCESS *) 0 ;
   FPDF_BYTESTRING arg2 = (FPDF_BYTESTRING) 0 ;
@@ -5210,12 +5210,12 @@ static SwigV8ReturnValue _wrap_FPDF_LoadCustomDocument(const SwigV8Arguments &ar
   char *buf2 = 0 ;
   int alloc2 = 0 ;
   FPDF_DOCUMENT result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_LoadCustomDocument.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_FPDF_FILEACCESS, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadCustomDocument" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadCustomDocument" "', argument " "1"" of type '" "FPDF_FILEACCESS *""'");
   }
   arg1 = reinterpret_cast< FPDF_FILEACCESS * >(argp1);
   res2 = SWIG_AsCharPtrAndSize(args[1], &buf2, NULL, &alloc2);
@@ -5225,11 +5225,11 @@ static SwigV8ReturnValue _wrap_FPDF_LoadCustomDocument(const SwigV8Arguments &ar
   arg2 = reinterpret_cast< FPDF_BYTESTRING >(buf2);
   result = (FPDF_DOCUMENT)FPDF_LoadCustomDocument(arg1,(char const *)arg2);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
-  
+
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5238,7 +5238,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetFileVersion(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int *arg2 = (int *) 0 ;
@@ -5247,26 +5247,26 @@ static SwigV8ReturnValue _wrap_FPDF_GetFileVersion(const SwigV8Arguments &args) 
   void *argp2 = 0 ;
   int res2 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetFileVersion.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetFileVersion" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetFileVersion" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_int, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_GetFileVersion" "', argument " "2"" of type '" "int *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_GetFileVersion" "', argument " "2"" of type '" "int *""'");
   }
   arg2 = reinterpret_cast< int * >(argp2);
   result = (FPDF_BOOL)FPDF_GetFileVersion(arg1,arg2);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5279,13 +5279,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_SUCCESS(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_FPDF_ERR_SUCCESS(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5298,13 +5298,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_UNKNOWN(v8::Local<v8::String> property, 
   static SwigV8ReturnValue _wrap_FPDF_ERR_UNKNOWN(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(1));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5317,13 +5317,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_FILE(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_FPDF_ERR_FILE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(2));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5336,13 +5336,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_FORMAT(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FPDF_ERR_FORMAT(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(3));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5355,13 +5355,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_PASSWORD(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_FPDF_ERR_PASSWORD(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(4));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5374,13 +5374,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_SECURITY(v8::Local<v8::String> property,
   static SwigV8ReturnValue _wrap_FPDF_ERR_SECURITY(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(5));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5393,13 +5393,13 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_PAGE(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_FPDF_ERR_PAGE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(6));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5408,17 +5408,17 @@ static SwigV8ReturnValue _wrap_FPDF_ERR_PAGE(v8::Local<v8::String> property, con
 
 static SwigV8ReturnValue _wrap_FPDF_GetLastError(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   unsigned long result;
-  
+
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetLastError.");
-  
+
   result = (unsigned long)FPDF_GetLastError();
   jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5427,26 +5427,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_DocumentHasValidCrossReferenceTable(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_DocumentHasValidCrossReferenceTable.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_DocumentHasValidCrossReferenceTable" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_DocumentHasValidCrossReferenceTable" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (FPDF_BOOL)FPDF_DocumentHasValidCrossReferenceTable(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5455,7 +5455,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetTrailerEnds(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   unsigned int *arg2 = (unsigned int *) 0 ;
@@ -5467,32 +5467,32 @@ static SwigV8ReturnValue _wrap_FPDF_GetTrailerEnds(const SwigV8Arguments &args) 
   unsigned long val3 ;
   int ecode3 = 0 ;
   unsigned long result;
-  
+
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetTrailerEnds.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetTrailerEnds" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetTrailerEnds" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_unsigned_int, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_GetTrailerEnds" "', argument " "2"" of type '" "unsigned int *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_GetTrailerEnds" "', argument " "2"" of type '" "unsigned int *""'");
   }
   arg2 = reinterpret_cast< unsigned int * >(argp2);
   ecode3 = SWIG_AsVal_unsigned_SS_long(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDF_GetTrailerEnds" "', argument " "3"" of type '" "unsigned long""'");
-  } 
+  }
   arg3 = static_cast< unsigned long >(val3);
   result = (unsigned long)FPDF_GetTrailerEnds(arg1,arg2,arg3);
   jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-  
-  
-  
-  
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5501,26 +5501,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetDocPermissions(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   unsigned long result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetDocPermissions.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetDocPermissions" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetDocPermissions" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (unsigned long)FPDF_GetDocPermissions(arg1);
   jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5529,26 +5529,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetSecurityHandlerRevision(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetSecurityHandlerRevision.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetSecurityHandlerRevision" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetSecurityHandlerRevision" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (int)FPDF_GetSecurityHandlerRevision(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5557,26 +5557,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageCount(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageCount.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageCount" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageCount" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (int)FPDF_GetPageCount(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5585,7 +5585,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_LoadPage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int arg2 ;
@@ -5594,26 +5594,26 @@ static SwigV8ReturnValue _wrap_FPDF_LoadPage(const SwigV8Arguments &args) {
   int val2 ;
   int ecode2 = 0 ;
   FPDF_PAGE result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_LoadPage.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadPage" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_LoadPage" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_LoadPage" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   result = (FPDF_PAGE)FPDF_LoadPage(arg1,arg2);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
-  
-  
-  
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5622,26 +5622,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageWidthF(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageWidthF.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageWidthF" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageWidthF" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   result = (float)FPDF_GetPageWidthF(arg1);
   jsresult = SWIG_From_float(static_cast< float >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5650,26 +5650,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageWidth(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageWidth.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageWidth" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageWidth" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   result = (double)FPDF_GetPageWidth(arg1);
   jsresult = SWIG_From_double(static_cast< double >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5678,26 +5678,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageHeightF(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   float result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageHeightF.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageHeightF" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageHeightF" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   result = (float)FPDF_GetPageHeightF(arg1);
   jsresult = SWIG_From_float(static_cast< float >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5706,26 +5706,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageHeight(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   double result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageHeight.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageHeight" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageHeight" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   result = (double)FPDF_GetPageHeight(arg1);
   jsresult = SWIG_From_double(static_cast< double >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5734,7 +5734,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageBoundingBox(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   FS_RECTF *arg2 = (FS_RECTF *) 0 ;
@@ -5743,26 +5743,26 @@ static SwigV8ReturnValue _wrap_FPDF_GetPageBoundingBox(const SwigV8Arguments &ar
   void *argp2 = 0 ;
   int res2 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageBoundingBox.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageBoundingBox" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageBoundingBox" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_GetPageBoundingBox" "', argument " "2"" of type '" "FS_RECTF *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_GetPageBoundingBox" "', argument " "2"" of type '" "FS_RECTF *""'");
   }
   arg2 = reinterpret_cast< FS_RECTF * >(argp2);
   result = (FPDF_BOOL)FPDF_GetPageBoundingBox(arg1,arg2);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5771,7 +5771,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageSizeByIndexF(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int arg2 ;
@@ -5783,32 +5783,32 @@ static SwigV8ReturnValue _wrap_FPDF_GetPageSizeByIndexF(const SwigV8Arguments &a
   void *argp3 = 0 ;
   int res3 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageSizeByIndexF.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageSizeByIndexF" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageSizeByIndexF" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_GetPageSizeByIndexF" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   res3 = SWIG_ConvertPtr(args[2], &argp3,SWIGTYPE_p_FS_SIZEF_, 0 |  0 );
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetPageSizeByIndexF" "', argument " "3"" of type '" "FS_SIZEF *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetPageSizeByIndexF" "', argument " "3"" of type '" "FS_SIZEF *""'");
   }
   arg3 = reinterpret_cast< FS_SIZEF * >(argp3);
   result = (FPDF_BOOL)FPDF_GetPageSizeByIndexF(arg1,arg2,arg3);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
-  
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5817,7 +5817,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetPageSizeByIndex(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int arg2 ;
@@ -5832,38 +5832,38 @@ static SwigV8ReturnValue _wrap_FPDF_GetPageSizeByIndex(const SwigV8Arguments &ar
   void *argp4 = 0 ;
   int res4 = 0 ;
   int result;
-  
+
   if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetPageSizeByIndex.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   res3 = SWIG_ConvertPtr(args[2], &argp3,SWIGTYPE_p_double, 0 |  0 );
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "3"" of type '" "double *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "3"" of type '" "double *""'");
   }
   arg3 = reinterpret_cast< double * >(argp3);
   res4 = SWIG_ConvertPtr(args[3], &argp4,SWIGTYPE_p_double, 0 |  0 );
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "4"" of type '" "double *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDF_GetPageSizeByIndex" "', argument " "4"" of type '" "double *""'");
   }
   arg4 = reinterpret_cast< double * >(argp4);
   result = (int)FPDF_GetPageSizeByIndex(arg1,arg2,arg3,arg4);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
-  
-  
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -5876,13 +5876,13 @@ static SwigV8ReturnValue _wrap_FPDF_ANNOT(v8::Local<v8::String> property, const 
   static SwigV8ReturnValue _wrap_FPDF_ANNOT(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x01));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5895,13 +5895,13 @@ static SwigV8ReturnValue _wrap_FPDF_LCD_TEXT(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_FPDF_LCD_TEXT(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x02));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5914,13 +5914,13 @@ static SwigV8ReturnValue _wrap_FPDF_NO_NATIVETEXT(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_FPDF_NO_NATIVETEXT(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x04));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5933,13 +5933,13 @@ static SwigV8ReturnValue _wrap_FPDF_GRAYSCALE(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_FPDF_GRAYSCALE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x08));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5952,13 +5952,13 @@ static SwigV8ReturnValue _wrap_FPDF_DEBUG_INFO(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FPDF_DEBUG_INFO(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x80));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5971,13 +5971,13 @@ static SwigV8ReturnValue _wrap_FPDF_NO_CATCH(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_FPDF_NO_CATCH(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x100));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -5990,13 +5990,13 @@ static SwigV8ReturnValue _wrap_FPDF_RENDER_LIMITEDIMAGECACHE(v8::Local<v8::Strin
   static SwigV8ReturnValue _wrap_FPDF_RENDER_LIMITEDIMAGECACHE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x200));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6009,13 +6009,13 @@ static SwigV8ReturnValue _wrap_FPDF_RENDER_FORCEHALFTONE(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_FPDF_RENDER_FORCEHALFTONE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x400));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6028,13 +6028,13 @@ static SwigV8ReturnValue _wrap_FPDF_PRINTING(v8::Local<v8::String> property, con
   static SwigV8ReturnValue _wrap_FPDF_PRINTING(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x800));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6047,13 +6047,13 @@ static SwigV8ReturnValue _wrap_FPDF_RENDER_NO_SMOOTHTEXT(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_FPDF_RENDER_NO_SMOOTHTEXT(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x1000));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6066,13 +6066,13 @@ static SwigV8ReturnValue _wrap_FPDF_RENDER_NO_SMOOTHIMAGE(v8::Local<v8::String> 
   static SwigV8ReturnValue _wrap_FPDF_RENDER_NO_SMOOTHIMAGE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x2000));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6085,13 +6085,13 @@ static SwigV8ReturnValue _wrap_FPDF_RENDER_NO_SMOOTHPATH(v8::Local<v8::String> p
   static SwigV8ReturnValue _wrap_FPDF_RENDER_NO_SMOOTHPATH(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x4000));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6104,13 +6104,13 @@ static SwigV8ReturnValue _wrap_FPDF_REVERSE_BYTE_ORDER(v8::Local<v8::String> pro
   static SwigV8ReturnValue _wrap_FPDF_REVERSE_BYTE_ORDER(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x10));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6123,13 +6123,13 @@ static SwigV8ReturnValue _wrap_FPDF_CONVERT_FILL_TO_STROKE(v8::Local<v8::String>
   static SwigV8ReturnValue _wrap_FPDF_CONVERT_FILL_TO_STROKE(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0x20));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6142,28 +6142,28 @@ static void _wrap_FPDF_COLORSCHEME_path_fill_color_set(v8::Local<v8::String> pro
   static void _wrap_FPDF_COLORSCHEME_path_fill_color_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     FPDF_DWORD arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned long val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_fill_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_fill_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     ecode2 = SWIG_AsVal_unsigned_SS_long(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_COLORSCHEME_path_fill_color_set" "', argument " "2"" of type '" "FPDF_DWORD""'");
-    } 
+    }
     arg2 = static_cast< FPDF_DWORD >(val2);
     if (arg1) (arg1)->path_fill_color = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -6176,24 +6176,24 @@ static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_path_fill_color_get(v8::Local<v8
   static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_path_fill_color_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_DWORD result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_fill_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_fill_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     result = (FPDF_DWORD) ((arg1)->path_fill_color);
     jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6206,28 +6206,28 @@ static void _wrap_FPDF_COLORSCHEME_path_stroke_color_set(v8::Local<v8::String> p
   static void _wrap_FPDF_COLORSCHEME_path_stroke_color_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     FPDF_DWORD arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned long val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_stroke_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_stroke_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     ecode2 = SWIG_AsVal_unsigned_SS_long(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_COLORSCHEME_path_stroke_color_set" "', argument " "2"" of type '" "FPDF_DWORD""'");
-    } 
+    }
     arg2 = static_cast< FPDF_DWORD >(val2);
     if (arg1) (arg1)->path_stroke_color = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -6240,24 +6240,24 @@ static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_path_stroke_color_get(v8::Local<
   static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_path_stroke_color_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_DWORD result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_stroke_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_path_stroke_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     result = (FPDF_DWORD) ((arg1)->path_stroke_color);
     jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6270,28 +6270,28 @@ static void _wrap_FPDF_COLORSCHEME_text_fill_color_set(v8::Local<v8::String> pro
   static void _wrap_FPDF_COLORSCHEME_text_fill_color_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     FPDF_DWORD arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned long val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_fill_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_fill_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     ecode2 = SWIG_AsVal_unsigned_SS_long(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_COLORSCHEME_text_fill_color_set" "', argument " "2"" of type '" "FPDF_DWORD""'");
-    } 
+    }
     arg2 = static_cast< FPDF_DWORD >(val2);
     if (arg1) (arg1)->text_fill_color = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -6304,24 +6304,24 @@ static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_text_fill_color_get(v8::Local<v8
   static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_text_fill_color_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_DWORD result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_fill_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_fill_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     result = (FPDF_DWORD) ((arg1)->text_fill_color);
     jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6334,28 +6334,28 @@ static void _wrap_FPDF_COLORSCHEME_text_stroke_color_set(v8::Local<v8::String> p
   static void _wrap_FPDF_COLORSCHEME_text_stroke_color_set(v8::Local<v8::Name> property, v8::Local<v8::Value> value, const SwigV8PropertyCallbackInfoVoid &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     FPDF_DWORD arg2 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     unsigned long val2 ;
     int ecode2 = 0 ;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_stroke_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_stroke_color_set" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     ecode2 = SWIG_AsVal_unsigned_SS_long(value, &val2);
     if (!SWIG_IsOK(ecode2)) {
       SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_COLORSCHEME_text_stroke_color_set" "', argument " "2"" of type '" "FPDF_DWORD""'");
-    } 
+    }
     arg2 = static_cast< FPDF_DWORD >(val2);
     if (arg1) (arg1)->text_stroke_color = arg2;
-    
-    
-    
+
+
+
     goto fail;
   fail:
     return;
@@ -6368,24 +6368,24 @@ static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_text_stroke_color_get(v8::Local<
   static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_text_stroke_color_get(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
     FPDF_COLORSCHEME_ *arg1 = (FPDF_COLORSCHEME_ *) 0 ;
     void *argp1 = 0 ;
     int res1 = 0 ;
     FPDF_DWORD result;
-    
+
     res1 = SWIG_ConvertPtr(info.Holder(), &argp1,SWIGTYPE_p_FPDF_COLORSCHEME_, 0 |  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_stroke_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'"); 
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_COLORSCHEME_text_stroke_color_get" "', argument " "1"" of type '" "FPDF_COLORSCHEME_ *""'");
     }
     arg1 = reinterpret_cast< FPDF_COLORSCHEME_ * >(argp1);
     result = (FPDF_DWORD) ((arg1)->text_stroke_color);
     jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-    
-    
+
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -6394,18 +6394,18 @@ static SwigV8ReturnValue _wrap_FPDF_COLORSCHEME_text_stroke_color_get(v8::Local<
 
 static SwigV8ReturnValue _wrap_new_FPDF_COLORSCHEME(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_OBJECT self = args.Holder();
   FPDF_COLORSCHEME_ *result;
   if(self->InternalFieldCount() < 1) SWIG_exception_fail(SWIG_ERROR, "Illegal call of constructor _wrap_new_FPDF_COLORSCHEME.");
   if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_new_FPDF_COLORSCHEME.");
   result = (FPDF_COLORSCHEME_ *)new FPDF_COLORSCHEME_();
-  
-  
-  
+
+
+
   SWIGV8_SetPrivateData(self, result, SWIGTYPE_p_FPDF_COLORSCHEME_, SWIG_POINTER_OWN);
   SWIGV8_RETURN(self);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6428,13 +6428,13 @@ static void _wrap_delete_FPDF_COLORSCHEME(v8::Persistent<v8::Value> object, void
         static void _wrap_delete_FPDF_COLORSCHEME(const v8::WeakCallbackInfo<SWIGV8_Proxy> &data) {
           SWIGV8_Proxy *proxy = data.GetParameter();
 #endif
-          
+
           if(proxy->swigCMemOwn && proxy->swigCObject) {
             FPDF_COLORSCHEME_ * arg1 = (FPDF_COLORSCHEME_ *)proxy->swigCObject;
             delete arg1;
           }
           delete proxy;
-          
+
 #if (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031710)
           object.Dispose();
 #elif (V8_MAJOR_VERSION-0) < 4 && (SWIG_V8_VERSION < 0x031900)
@@ -6451,7 +6451,7 @@ static void _wrap_delete_FPDF_COLORSCHEME(v8::Persistent<v8::Value> object, void
 
 static SwigV8ReturnValue _wrap_FPDF_RenderPage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HDC arg1 ;
   FPDF_PAGE arg2 = (FPDF_PAGE) 0 ;
@@ -6477,14 +6477,14 @@ static SwigV8ReturnValue _wrap_FPDF_RenderPage(const SwigV8Arguments &args) {
   int ecode7 = 0 ;
   int val8 ;
   int ecode8 = 0 ;
-  
+
   if(args.Length() != 8) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_RenderPage.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPage" "', argument " "1"" of type '" "HDC""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPage" "', argument " "1"" of type '" "HDC""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "FPDF_RenderPage" "', argument " "1"" of type '" "HDC""'");
     } else {
@@ -6493,51 +6493,51 @@ static SwigV8ReturnValue _wrap_FPDF_RenderPage(const SwigV8Arguments &args) {
   }
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPage" "', argument " "2"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPage" "', argument " "2"" of type '" "FPDF_PAGE""'");
   }
   arg2 = reinterpret_cast< FPDF_PAGE >(argp2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDF_RenderPage" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_RenderPage" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDF_RenderPage" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   ecode6 = SWIG_AsVal_int(args[5], &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "FPDF_RenderPage" "', argument " "6"" of type '" "int""'");
-  } 
+  }
   arg6 = static_cast< int >(val6);
   ecode7 = SWIG_AsVal_int(args[6], &val7);
   if (!SWIG_IsOK(ecode7)) {
     SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "FPDF_RenderPage" "', argument " "7"" of type '" "int""'");
-  } 
+  }
   arg7 = static_cast< int >(val7);
   ecode8 = SWIG_AsVal_int(args[7], &val8);
   if (!SWIG_IsOK(ecode8)) {
     SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "FPDF_RenderPage" "', argument " "8"" of type '" "int""'");
-  } 
+  }
   arg8 = static_cast< int >(val8);
   FPDF_RenderPage(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6546,7 +6546,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_RenderPageBitmap(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   FPDF_PAGE arg2 = (FPDF_PAGE) 0 ;
@@ -6572,62 +6572,62 @@ static SwigV8ReturnValue _wrap_FPDF_RenderPageBitmap(const SwigV8Arguments &args
   int ecode7 = 0 ;
   int val8 ;
   int ecode8 = 0 ;
-  
+
   if(args.Length() != 8) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_RenderPageBitmap.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPageBitmap" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPageBitmap" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPageBitmap" "', argument " "2"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPageBitmap" "', argument " "2"" of type '" "FPDF_PAGE""'");
   }
   arg2 = reinterpret_cast< FPDF_PAGE >(argp2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDF_RenderPageBitmap" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_RenderPageBitmap" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDF_RenderPageBitmap" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   ecode6 = SWIG_AsVal_int(args[5], &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "FPDF_RenderPageBitmap" "', argument " "6"" of type '" "int""'");
-  } 
+  }
   arg6 = static_cast< int >(val6);
   ecode7 = SWIG_AsVal_int(args[6], &val7);
   if (!SWIG_IsOK(ecode7)) {
     SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "FPDF_RenderPageBitmap" "', argument " "7"" of type '" "int""'");
-  } 
+  }
   arg7 = static_cast< int >(val7);
   ecode8 = SWIG_AsVal_int(args[7], &val8);
   if (!SWIG_IsOK(ecode8)) {
     SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "FPDF_RenderPageBitmap" "', argument " "8"" of type '" "int""'");
-  } 
+  }
   arg8 = static_cast< int >(val8);
   FPDF_RenderPageBitmap(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6636,7 +6636,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_RenderPageBitmapWithMatrix(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   FPDF_PAGE arg2 = (FPDF_PAGE) 0 ;
@@ -6653,44 +6653,44 @@ static SwigV8ReturnValue _wrap_FPDF_RenderPageBitmapWithMatrix(const SwigV8Argum
   int res4 = 0 ;
   int val5 ;
   int ecode5 = 0 ;
-  
+
   if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_RenderPageBitmapWithMatrix.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   res2 = SWIG_ConvertPtr(args[1], &argp2,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "2"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "2"" of type '" "FPDF_PAGE""'");
   }
   arg2 = reinterpret_cast< FPDF_PAGE >(argp2);
   res3 = SWIG_ConvertPtr(args[2], &argp3,SWIGTYPE_p__FS_MATRIX_, 0 |  0 );
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "3"" of type '" "FS_MATRIX const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "3"" of type '" "FS_MATRIX const *""'");
   }
   arg3 = reinterpret_cast< FS_MATRIX * >(argp3);
   res4 = SWIG_ConvertPtr(args[3], &argp4,SWIGTYPE_p__FS_RECTF_, 0 |  0 );
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "4"" of type '" "FS_RECTF const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "4"" of type '" "FS_RECTF const *""'");
   }
   arg4 = reinterpret_cast< FS_RECTF * >(argp4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDF_RenderPageBitmapWithMatrix" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   FPDF_RenderPageBitmapWithMatrix(arg1,arg2,(_FS_MATRIX_ const *)arg3,(_FS_RECTF_ const *)arg4,arg5);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6699,25 +6699,25 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_ClosePage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_ClosePage.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_ClosePage" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_ClosePage" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   FPDF_ClosePage(arg1);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6726,25 +6726,25 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_CloseDocument(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_CloseDocument.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_CloseDocument" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_CloseDocument" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   FPDF_CloseDocument(arg1);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6753,7 +6753,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_DeviceToPage(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   int arg2 ;
@@ -6786,74 +6786,74 @@ static SwigV8ReturnValue _wrap_FPDF_DeviceToPage(const SwigV8Arguments &args) {
   void *argp10 = 0 ;
   int res10 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 10) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_DeviceToPage.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_DeviceToPage" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_DeviceToPage" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_DeviceToPage" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDF_DeviceToPage" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_DeviceToPage" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDF_DeviceToPage" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   ecode6 = SWIG_AsVal_int(args[5], &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "FPDF_DeviceToPage" "', argument " "6"" of type '" "int""'");
-  } 
+  }
   arg6 = static_cast< int >(val6);
   ecode7 = SWIG_AsVal_int(args[6], &val7);
   if (!SWIG_IsOK(ecode7)) {
     SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "FPDF_DeviceToPage" "', argument " "7"" of type '" "int""'");
-  } 
+  }
   arg7 = static_cast< int >(val7);
   ecode8 = SWIG_AsVal_int(args[7], &val8);
   if (!SWIG_IsOK(ecode8)) {
     SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "FPDF_DeviceToPage" "', argument " "8"" of type '" "int""'");
-  } 
+  }
   arg8 = static_cast< int >(val8);
   res9 = SWIG_ConvertPtr(args[8], &argp9,SWIGTYPE_p_double, 0 |  0 );
   if (!SWIG_IsOK(res9)) {
-    SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "FPDF_DeviceToPage" "', argument " "9"" of type '" "double *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "FPDF_DeviceToPage" "', argument " "9"" of type '" "double *""'");
   }
   arg9 = reinterpret_cast< double * >(argp9);
   res10 = SWIG_ConvertPtr(args[9], &argp10,SWIGTYPE_p_double, 0 |  0 );
   if (!SWIG_IsOK(res10)) {
-    SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "FPDF_DeviceToPage" "', argument " "10"" of type '" "double *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "FPDF_DeviceToPage" "', argument " "10"" of type '" "double *""'");
   }
   arg10 = reinterpret_cast< double * >(argp10);
   result = (FPDF_BOOL)FPDF_DeviceToPage(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6862,7 +6862,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_PageToDevice(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGE arg1 = (FPDF_PAGE) 0 ;
   int arg2 ;
@@ -6895,74 +6895,74 @@ static SwigV8ReturnValue _wrap_FPDF_PageToDevice(const SwigV8Arguments &args) {
   void *argp10 = 0 ;
   int res10 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 10) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_PageToDevice.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_page_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_PageToDevice" "', argument " "1"" of type '" "FPDF_PAGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_PageToDevice" "', argument " "1"" of type '" "FPDF_PAGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGE >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_PageToDevice" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDF_PageToDevice" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_PageToDevice" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDF_PageToDevice" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   ecode6 = SWIG_AsVal_int(args[5], &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "FPDF_PageToDevice" "', argument " "6"" of type '" "int""'");
-  } 
+  }
   arg6 = static_cast< int >(val6);
   ecode7 = SWIG_AsVal_double(args[6], &val7);
   if (!SWIG_IsOK(ecode7)) {
     SWIG_exception_fail(SWIG_ArgError(ecode7), "in method '" "FPDF_PageToDevice" "', argument " "7"" of type '" "double""'");
-  } 
+  }
   arg7 = static_cast< double >(val7);
   ecode8 = SWIG_AsVal_double(args[7], &val8);
   if (!SWIG_IsOK(ecode8)) {
     SWIG_exception_fail(SWIG_ArgError(ecode8), "in method '" "FPDF_PageToDevice" "', argument " "8"" of type '" "double""'");
-  } 
+  }
   arg8 = static_cast< double >(val8);
   res9 = SWIG_ConvertPtr(args[8], &argp9,SWIGTYPE_p_int, 0 |  0 );
   if (!SWIG_IsOK(res9)) {
-    SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "FPDF_PageToDevice" "', argument " "9"" of type '" "int *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res9), "in method '" "FPDF_PageToDevice" "', argument " "9"" of type '" "int *""'");
   }
   arg9 = reinterpret_cast< int * >(argp9);
   res10 = SWIG_ConvertPtr(args[9], &argp10,SWIGTYPE_p_int, 0 |  0 );
   if (!SWIG_IsOK(res10)) {
-    SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "FPDF_PageToDevice" "', argument " "10"" of type '" "int *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res10), "in method '" "FPDF_PageToDevice" "', argument " "10"" of type '" "int *""'");
   }
   arg10 = reinterpret_cast< int * >(argp10);
   result = (FPDF_BOOL)FPDF_PageToDevice(arg1,arg2,arg3,arg4,arg5,arg6,arg7,arg8,arg9,arg10);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -6971,7 +6971,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_Create(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   int arg1 ;
   int arg2 ;
@@ -6983,32 +6983,32 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_Create(const SwigV8Arguments &args) {
   int val3 ;
   int ecode3 = 0 ;
   FPDF_BITMAP result;
-  
+
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_Create.");
-  
+
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "FPDFBitmap_Create" "', argument " "1"" of type '" "int""'");
-  } 
+  }
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDFBitmap_Create" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDFBitmap_Create" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   result = (FPDF_BITMAP)FPDFBitmap_Create(arg1,arg2,arg3);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
-  
-  
-  
-  
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7021,13 +7021,13 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_Unknown(v8::Local<v8::String> property
   static SwigV8ReturnValue _wrap_FPDFBitmap_Unknown(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(0));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7040,13 +7040,13 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_Gray(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FPDFBitmap_Gray(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(1));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7059,13 +7059,13 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_BGR(v8::Local<v8::String> property, co
   static SwigV8ReturnValue _wrap_FPDFBitmap_BGR(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(2));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7078,13 +7078,13 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_BGRx(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FPDFBitmap_BGRx(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(3));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7097,13 +7097,13 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_BGRA(v8::Local<v8::String> property, c
   static SwigV8ReturnValue _wrap_FPDFBitmap_BGRA(v8::Local<v8::Name> property, const SwigV8PropertyCallbackInfo &info) {
 #endif
     SWIGV8_HANDLESCOPE();
-    
+
     SWIGV8_VALUE jsresult;
-    
+
     jsresult = SWIG_From_int(static_cast< int >(4));
-    
+
     SWIGV8_RETURN_INFO(jsresult, info);
-    
+
     goto fail;
   fail:
     SWIGV8_RETURN_INFO(SWIGV8_UNDEFINED(), info);
@@ -7112,7 +7112,7 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_BGRA(v8::Local<v8::String> property, c
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_CreateEx(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   int arg1 ;
   int arg2 ;
@@ -7129,43 +7129,43 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_CreateEx(const SwigV8Arguments &args) 
   int val5 ;
   int ecode5 = 0 ;
   FPDF_BITMAP result;
-  
+
   if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_CreateEx.");
-  
+
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "FPDFBitmap_CreateEx" "', argument " "1"" of type '" "int""'");
-  } 
+  }
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDFBitmap_CreateEx" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDFBitmap_CreateEx" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   res4 = SWIG_ConvertPtr(args[3],SWIG_as_voidptrptr(&arg4), 0, 0);
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDFBitmap_CreateEx" "', argument " "4"" of type '" "void *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDFBitmap_CreateEx" "', argument " "4"" of type '" "void *""'");
   }
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDFBitmap_CreateEx" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   result = (FPDF_BITMAP)FPDFBitmap_CreateEx(arg1,arg2,arg3,arg4,arg5);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7174,26 +7174,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_GetFormat(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_GetFormat.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetFormat" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetFormat" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   result = (int)FPDFBitmap_GetFormat(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7202,7 +7202,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_FillRect(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   int arg2 ;
@@ -7222,50 +7222,50 @@ static SwigV8ReturnValue _wrap_FPDFBitmap_FillRect(const SwigV8Arguments &args) 
   int ecode5 = 0 ;
   unsigned long val6 ;
   int ecode6 = 0 ;
-  
+
   if(args.Length() != 6) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_FillRect.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_FillRect" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_FillRect" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDFBitmap_FillRect" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "FPDFBitmap_FillRect" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDFBitmap_FillRect" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "FPDFBitmap_FillRect" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   ecode6 = SWIG_AsVal_unsigned_SS_long(args[5], &val6);
   if (!SWIG_IsOK(ecode6)) {
     SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "FPDFBitmap_FillRect" "', argument " "6"" of type '" "FPDF_DWORD""'");
-  } 
+  }
   arg6 = static_cast< FPDF_DWORD >(val6);
   FPDFBitmap_FillRect(arg1,arg2,arg3,arg4,arg5,arg6);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7274,26 +7274,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_GetBuffer(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   void *result = 0 ;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_GetBuffer.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetBuffer" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetBuffer" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   result = (void *)FPDFBitmap_GetBuffer(arg1);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_void, 0 |  0 );
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7302,26 +7302,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_GetWidth(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_GetWidth.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetWidth" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetWidth" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   result = (int)FPDFBitmap_GetWidth(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7330,26 +7330,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_GetHeight(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_GetHeight.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetHeight" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetHeight" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   result = (int)FPDFBitmap_GetHeight(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7358,26 +7358,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_GetStride(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_GetStride.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetStride" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_GetStride" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   result = (int)FPDFBitmap_GetStride(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7386,25 +7386,25 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDFBitmap_Destroy(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_BITMAP arg1 = (FPDF_BITMAP) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDFBitmap_Destroy.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_bitmap_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_Destroy" "', argument " "1"" of type '" "FPDF_BITMAP""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDFBitmap_Destroy" "', argument " "1"" of type '" "FPDF_BITMAP""'");
   }
   arg1 = reinterpret_cast< FPDF_BITMAP >(argp1);
   FPDFBitmap_Destroy(arg1);
   jsresult = SWIGV8_UNDEFINED();
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7413,26 +7413,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetPrintScaling(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetPrintScaling.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintScaling" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintScaling" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (FPDF_BOOL)FPDF_VIEWERREF_GetPrintScaling(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7441,26 +7441,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetNumCopies(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetNumCopies.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetNumCopies" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetNumCopies" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (int)FPDF_VIEWERREF_GetNumCopies(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7469,26 +7469,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetPrintPageRange(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   FPDF_PAGERANGE result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetPrintPageRange.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintPageRange" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintPageRange" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (FPDF_PAGERANGE)FPDF_VIEWERREF_GetPrintPageRange(arg1);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_pagerange_t__, 0 |  0 );
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7497,26 +7497,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetPrintPageRangeCount(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGERANGE arg1 = (FPDF_PAGERANGE) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   size_t result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetPrintPageRangeCount.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_pagerange_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintPageRangeCount" "', argument " "1"" of type '" "FPDF_PAGERANGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintPageRangeCount" "', argument " "1"" of type '" "FPDF_PAGERANGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGERANGE >(argp1);
   result = FPDF_VIEWERREF_GetPrintPageRangeCount(arg1);
   jsresult = SWIG_From_size_t(static_cast< size_t >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7525,7 +7525,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetPrintPageRangeElement(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_PAGERANGE arg1 = (FPDF_PAGERANGE) 0 ;
   size_t arg2 ;
@@ -7534,26 +7534,26 @@ static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetPrintPageRangeElement(const Swi
   size_t val2 ;
   int ecode2 = 0 ;
   int result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetPrintPageRangeElement.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_pagerange_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintPageRangeElement" "', argument " "1"" of type '" "FPDF_PAGERANGE""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetPrintPageRangeElement" "', argument " "1"" of type '" "FPDF_PAGERANGE""'");
   }
   arg1 = reinterpret_cast< FPDF_PAGERANGE >(argp1);
   ecode2 = SWIG_AsVal_size_t(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_VIEWERREF_GetPrintPageRangeElement" "', argument " "2"" of type '" "size_t""'");
-  } 
+  }
   arg2 = static_cast< size_t >(val2);
   result = (int)FPDF_VIEWERREF_GetPrintPageRangeElement(arg1,arg2);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7562,26 +7562,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetDuplex(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   FPDF_DUPLEXTYPE result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetDuplex.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetDuplex" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetDuplex" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (FPDF_DUPLEXTYPE)FPDF_VIEWERREF_GetDuplex(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7590,7 +7590,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetName(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   FPDF_BYTESTRING arg2 = (FPDF_BYTESTRING) 0 ;
@@ -7607,12 +7607,12 @@ static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetName(const SwigV8Arguments &arg
   unsigned long val4 ;
   int ecode4 = 0 ;
   unsigned long result;
-  
+
   if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_VIEWERREF_GetName.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetName" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_VIEWERREF_GetName" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   res2 = SWIG_AsCharPtrAndSize(args[1], &buf2, NULL, &alloc2);
@@ -7628,17 +7628,17 @@ static SwigV8ReturnValue _wrap_FPDF_VIEWERREF_GetName(const SwigV8Arguments &arg
   ecode4 = SWIG_AsVal_unsigned_SS_long(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_VIEWERREF_GetName" "', argument " "4"" of type '" "unsigned long""'");
-  } 
+  }
   arg4 = static_cast< unsigned long >(val4);
   result = (unsigned long)FPDF_VIEWERREF_GetName(arg1,(char const *)arg2,arg3,arg4);
   jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-  
+
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
   if (alloc3 == SWIG_NEWOBJ) delete[] buf3;
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7647,26 +7647,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_CountNamedDests(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   FPDF_DWORD result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_CountNamedDests.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_CountNamedDests" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_CountNamedDests" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (FPDF_DWORD)FPDF_CountNamedDests(arg1);
   jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7675,7 +7675,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetNamedDestByName(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   FPDF_BYTESTRING arg2 = (FPDF_BYTESTRING) 0 ;
@@ -7685,12 +7685,12 @@ static SwigV8ReturnValue _wrap_FPDF_GetNamedDestByName(const SwigV8Arguments &ar
   char *buf2 = 0 ;
   int alloc2 = 0 ;
   FPDF_DEST result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetNamedDestByName.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetNamedDestByName" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetNamedDestByName" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   res2 = SWIG_AsCharPtrAndSize(args[1], &buf2, NULL, &alloc2);
@@ -7700,11 +7700,11 @@ static SwigV8ReturnValue _wrap_FPDF_GetNamedDestByName(const SwigV8Arguments &ar
   arg2 = reinterpret_cast< FPDF_BYTESTRING >(buf2);
   result = (FPDF_DEST)FPDF_GetNamedDestByName(arg1,(char const *)arg2);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_dest_t__, 0 |  0 );
-  
+
   if (alloc2 == SWIG_NEWOBJ) delete[] buf2;
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7713,7 +7713,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetNamedDest(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int arg2 ;
@@ -7727,37 +7727,37 @@ static SwigV8ReturnValue _wrap_FPDF_GetNamedDest(const SwigV8Arguments &args) {
   void *argp4 = 0 ;
   int res4 = 0 ;
   FPDF_DEST result;
-  
+
   if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetNamedDest.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetNamedDest" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetNamedDest" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_GetNamedDest" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   res3 = SWIG_ConvertPtr(args[2],SWIG_as_voidptrptr(&arg3), 0, 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetNamedDest" "', argument " "3"" of type '" "void *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetNamedDest" "', argument " "3"" of type '" "void *""'");
   }
   res4 = SWIG_ConvertPtr(args[3], &argp4,SWIGTYPE_p_long, 0 |  0 );
   if (!SWIG_IsOK(res4)) {
-    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDF_GetNamedDest" "', argument " "4"" of type '" "long *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "FPDF_GetNamedDest" "', argument " "4"" of type '" "long *""'");
   }
   arg4 = reinterpret_cast< long * >(argp4);
   result = (FPDF_DEST)FPDF_GetNamedDest(arg1,arg2,arg3,arg4);
   jsresult = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_fpdf_dest_t__, 0 |  0 );
-  
-  
-  
-  
-  
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7766,26 +7766,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetXFAPacketCount(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
   int result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetXFAPacketCount.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetXFAPacketCount" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetXFAPacketCount" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   result = (int)FPDF_GetXFAPacketCount(arg1);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7794,7 +7794,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetXFAPacketName(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int arg2 ;
@@ -7808,37 +7808,37 @@ static SwigV8ReturnValue _wrap_FPDF_GetXFAPacketName(const SwigV8Arguments &args
   unsigned long val4 ;
   int ecode4 = 0 ;
   unsigned long result;
-  
+
   if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetXFAPacketName.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetXFAPacketName" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetXFAPacketName" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_GetXFAPacketName" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   res3 = SWIG_ConvertPtr(args[2],SWIG_as_voidptrptr(&arg3), 0, 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetXFAPacketName" "', argument " "3"" of type '" "void *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetXFAPacketName" "', argument " "3"" of type '" "void *""'");
   }
   ecode4 = SWIG_AsVal_unsigned_SS_long(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_GetXFAPacketName" "', argument " "4"" of type '" "unsigned long""'");
-  } 
+  }
   arg4 = static_cast< unsigned long >(val4);
   result = (unsigned long)FPDF_GetXFAPacketName(arg1,arg2,arg3,arg4);
   jsresult = SWIG_From_unsigned_SS_long(static_cast< unsigned long >(result));
-  
-  
-  
-  
-  
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7847,7 +7847,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_FPDF_GetXFAPacketContent(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   FPDF_DOCUMENT arg1 = (FPDF_DOCUMENT) 0 ;
   int arg2 ;
@@ -7864,43 +7864,43 @@ static SwigV8ReturnValue _wrap_FPDF_GetXFAPacketContent(const SwigV8Arguments &a
   void *argp5 = 0 ;
   int res5 = 0 ;
   FPDF_BOOL result;
-  
+
   if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_FPDF_GetXFAPacketContent.");
-  
+
   res1 = SWIG_ConvertPtr(args[0], &argp1,SWIGTYPE_p_fpdf_document_t__, 0 |  0 );
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetXFAPacketContent" "', argument " "1"" of type '" "FPDF_DOCUMENT""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "FPDF_GetXFAPacketContent" "', argument " "1"" of type '" "FPDF_DOCUMENT""'");
   }
   arg1 = reinterpret_cast< FPDF_DOCUMENT >(argp1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "FPDF_GetXFAPacketContent" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   res3 = SWIG_ConvertPtr(args[2],SWIG_as_voidptrptr(&arg3), 0, 0);
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetXFAPacketContent" "', argument " "3"" of type '" "void *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "FPDF_GetXFAPacketContent" "', argument " "3"" of type '" "void *""'");
   }
   ecode4 = SWIG_AsVal_unsigned_SS_long(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "FPDF_GetXFAPacketContent" "', argument " "4"" of type '" "unsigned long""'");
-  } 
+  }
   arg4 = static_cast< unsigned long >(val4);
   res5 = SWIG_ConvertPtr(args[4], &argp5,SWIGTYPE_p_unsigned_long, 0 |  0 );
   if (!SWIG_IsOK(res5)) {
-    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "FPDF_GetXFAPacketContent" "', argument " "5"" of type '" "unsigned long *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "FPDF_GetXFAPacketContent" "', argument " "5"" of type '" "unsigned long *""'");
   }
   arg5 = reinterpret_cast< unsigned long * >(argp5);
   result = (FPDF_BOOL)FPDF_GetXFAPacketContent(arg1,arg2,arg3,arg4,arg5);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7909,20 +7909,20 @@ fail:
 
 static SwigV8ReturnValue _wrap_CreateMetaFileA(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   LPCSTR arg1 ;
   void *argp1 ;
   int res1 = 0 ;
   HDC result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CreateMetaFileA.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_LPCSTR,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CreateMetaFileA" "', argument " "1"" of type '" "LPCSTR""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CreateMetaFileA" "', argument " "1"" of type '" "LPCSTR""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CreateMetaFileA" "', argument " "1"" of type '" "LPCSTR""'");
     } else {
@@ -7931,9 +7931,9 @@ static SwigV8ReturnValue _wrap_CreateMetaFileA(const SwigV8Arguments &args) {
   }
   result = CreateMetaFileA(arg1);
   jsresult = SWIG_NewPointerObj((new HDC(static_cast< const HDC& >(result))), SWIGTYPE_p_HDC, SWIG_POINTER_OWN |  0 );
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7942,7 +7942,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_SelectClipRgn(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HDC arg1 ;
   HRGN arg2 ;
@@ -7951,14 +7951,14 @@ static SwigV8ReturnValue _wrap_SelectClipRgn(const SwigV8Arguments &args) {
   void *argp2 ;
   int res2 = 0 ;
   int result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_SelectClipRgn.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SelectClipRgn" "', argument " "1"" of type '" "HDC""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SelectClipRgn" "', argument " "1"" of type '" "HDC""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectClipRgn" "', argument " "1"" of type '" "HDC""'");
     } else {
@@ -7968,8 +7968,8 @@ static SwigV8ReturnValue _wrap_SelectClipRgn(const SwigV8Arguments &args) {
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_HRGN,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SelectClipRgn" "', argument " "2"" of type '" "HRGN""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SelectClipRgn" "', argument " "2"" of type '" "HRGN""'");
+    }
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectClipRgn" "', argument " "2"" of type '" "HRGN""'");
     } else {
@@ -7978,9 +7978,9 @@ static SwigV8ReturnValue _wrap_SelectClipRgn(const SwigV8Arguments &args) {
   }
   result = (int)SelectClipRgn(arg1,arg2);
   jsresult = SWIG_From_int(static_cast< int >(result));
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -7989,7 +7989,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_CreateRectRgn(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   int arg1 ;
   int arg2 ;
@@ -8004,38 +8004,38 @@ static SwigV8ReturnValue _wrap_CreateRectRgn(const SwigV8Arguments &args) {
   int val4 ;
   int ecode4 = 0 ;
   HRGN result;
-  
+
   if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CreateRectRgn.");
-  
+
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "CreateRectRgn" "', argument " "1"" of type '" "int""'");
-  } 
+  }
   arg1 = static_cast< int >(val1);
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "CreateRectRgn" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "CreateRectRgn" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "CreateRectRgn" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   result = CreateRectRgn(arg1,arg2,arg3,arg4);
   jsresult = SWIG_NewPointerObj((new HRGN(static_cast< const HRGN& >(result))), SWIGTYPE_p_HRGN, SWIG_POINTER_OWN |  0 );
-  
-  
-  
-  
-  
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8044,20 +8044,20 @@ fail:
 
 static SwigV8ReturnValue _wrap_DeleteObject(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HGDIOBJ arg1 ;
   void *argp1 ;
   int res1 = 0 ;
   BOOL result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DeleteObject.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HGDIOBJ,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeleteObject" "', argument " "1"" of type '" "HGDIOBJ""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeleteObject" "', argument " "1"" of type '" "HGDIOBJ""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DeleteObject" "', argument " "1"" of type '" "HGDIOBJ""'");
     } else {
@@ -8066,9 +8066,9 @@ static SwigV8ReturnValue _wrap_DeleteObject(const SwigV8Arguments &args) {
   }
   result = DeleteObject(arg1);
   jsresult = SWIG_NewPointerObj((new BOOL(static_cast< const BOOL& >(result))), SWIGTYPE_p_BOOL, SWIG_POINTER_OWN |  0 );
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8077,7 +8077,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_SelectObject(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HDC arg1 ;
   HGDIOBJ arg2 ;
@@ -8086,14 +8086,14 @@ static SwigV8ReturnValue _wrap_SelectObject(const SwigV8Arguments &args) {
   void *argp2 ;
   int res2 = 0 ;
   HGDIOBJ result;
-  
+
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_SelectObject.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SelectObject" "', argument " "1"" of type '" "HDC""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SelectObject" "', argument " "1"" of type '" "HDC""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectObject" "', argument " "1"" of type '" "HDC""'");
     } else {
@@ -8103,8 +8103,8 @@ static SwigV8ReturnValue _wrap_SelectObject(const SwigV8Arguments &args) {
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_HGDIOBJ,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SelectObject" "', argument " "2"" of type '" "HGDIOBJ""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SelectObject" "', argument " "2"" of type '" "HGDIOBJ""'");
+    }
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SelectObject" "', argument " "2"" of type '" "HGDIOBJ""'");
     } else {
@@ -8113,9 +8113,9 @@ static SwigV8ReturnValue _wrap_SelectObject(const SwigV8Arguments &args) {
   }
   result = SelectObject(arg1,arg2);
   jsresult = SWIG_NewPointerObj((new HGDIOBJ(static_cast< const HGDIOBJ& >(result))), SWIGTYPE_p_HGDIOBJ, SWIG_POINTER_OWN |  0 );
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8124,26 +8124,26 @@ fail:
 
 static SwigV8ReturnValue _wrap_GetStockObject(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   int arg1 ;
   int val1 ;
   int ecode1 = 0 ;
   HGDIOBJ result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_GetStockObject.");
-  
+
   ecode1 = SWIG_AsVal_int(args[0], &val1);
   if (!SWIG_IsOK(ecode1)) {
     SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "GetStockObject" "', argument " "1"" of type '" "int""'");
-  } 
+  }
   arg1 = static_cast< int >(val1);
   result = GetStockObject(arg1);
   jsresult = SWIG_NewPointerObj((new HGDIOBJ(static_cast< const HGDIOBJ& >(result))), SWIGTYPE_p_HGDIOBJ, SWIG_POINTER_OWN |  0 );
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8152,7 +8152,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_Rectangle(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HDC arg1 ;
   int arg2 ;
@@ -8170,14 +8170,14 @@ static SwigV8ReturnValue _wrap_Rectangle(const SwigV8Arguments &args) {
   int val5 ;
   int ecode5 = 0 ;
   BOOL result;
-  
+
   if(args.Length() != 5) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_Rectangle.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle" "', argument " "1"" of type '" "HDC""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Rectangle" "', argument " "1"" of type '" "HDC""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Rectangle" "', argument " "1"" of type '" "HDC""'");
     } else {
@@ -8187,32 +8187,32 @@ static SwigV8ReturnValue _wrap_Rectangle(const SwigV8Arguments &args) {
   ecode2 = SWIG_AsVal_int(args[1], &val2);
   if (!SWIG_IsOK(ecode2)) {
     SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Rectangle" "', argument " "2"" of type '" "int""'");
-  } 
+  }
   arg2 = static_cast< int >(val2);
   ecode3 = SWIG_AsVal_int(args[2], &val3);
   if (!SWIG_IsOK(ecode3)) {
     SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "Rectangle" "', argument " "3"" of type '" "int""'");
-  } 
+  }
   arg3 = static_cast< int >(val3);
   ecode4 = SWIG_AsVal_int(args[3], &val4);
   if (!SWIG_IsOK(ecode4)) {
     SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "Rectangle" "', argument " "4"" of type '" "int""'");
-  } 
+  }
   arg4 = static_cast< int >(val4);
   ecode5 = SWIG_AsVal_int(args[4], &val5);
   if (!SWIG_IsOK(ecode5)) {
     SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "Rectangle" "', argument " "5"" of type '" "int""'");
-  } 
+  }
   arg5 = static_cast< int >(val5);
   result = Rectangle(arg1,arg2,arg3,arg4,arg5);
   jsresult = SWIG_NewPointerObj((new BOOL(static_cast< const BOOL& >(result))), SWIGTYPE_p_BOOL, SWIG_POINTER_OWN |  0 );
-  
-  
-  
-  
-  
+
+
+
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8221,7 +8221,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HDC arg1 ;
   LPCWSTR arg2 ;
@@ -8236,14 +8236,14 @@ static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args) {
   void *argp4 ;
   int res4 = 0 ;
   HDC result;
-  
+
   if(args.Length() != 4) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CreateEnhMetaFileW.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CreateEnhMetaFileW" "', argument " "1"" of type '" "HDC""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CreateEnhMetaFileW" "', argument " "1"" of type '" "HDC""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CreateEnhMetaFileW" "', argument " "1"" of type '" "HDC""'");
     } else {
@@ -8253,8 +8253,8 @@ static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args) {
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_LPCWSTR,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CreateEnhMetaFileW" "', argument " "2"" of type '" "LPCWSTR""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "CreateEnhMetaFileW" "', argument " "2"" of type '" "LPCWSTR""'");
+    }
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CreateEnhMetaFileW" "', argument " "2"" of type '" "LPCWSTR""'");
     } else {
@@ -8263,14 +8263,14 @@ static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args) {
   }
   res3 = SWIG_ConvertPtr(args[2], &argp3,SWIGTYPE_p_RECT, 0 |  0 );
   if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CreateEnhMetaFileW" "', argument " "3"" of type '" "RECT const *""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "CreateEnhMetaFileW" "', argument " "3"" of type '" "RECT const *""'");
   }
   arg3 = reinterpret_cast< RECT * >(argp3);
   {
     res4 = SWIG_ConvertPtr(args[3], &argp4, SWIGTYPE_p_LPCWSTR,  0 );
     if (!SWIG_IsOK(res4)) {
-      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "CreateEnhMetaFileW" "', argument " "4"" of type '" "LPCWSTR""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "CreateEnhMetaFileW" "', argument " "4"" of type '" "LPCWSTR""'");
+    }
     if (!argp4) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CreateEnhMetaFileW" "', argument " "4"" of type '" "LPCWSTR""'");
     } else {
@@ -8279,10 +8279,10 @@ static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args) {
   }
   result = CreateEnhMetaFileW(arg1,arg2,(RECT const *)arg3,arg4);
   jsresult = SWIG_NewPointerObj((new HDC(static_cast< const HDC& >(result))), SWIGTYPE_p_HDC, SWIG_POINTER_OWN |  0 );
-  
-  
+
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8291,7 +8291,7 @@ fail:
 
 static SwigV8ReturnValue _wrap_GetEnhMetaFileBits(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HENHMETAFILE arg1 ;
   UINT arg2 ;
@@ -8303,14 +8303,14 @@ static SwigV8ReturnValue _wrap_GetEnhMetaFileBits(const SwigV8Arguments &args) {
   void *argp3 ;
   int res3 = 0 ;
   UINT result;
-  
+
   if(args.Length() != 3) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_GetEnhMetaFileBits.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HENHMETAFILE,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GetEnhMetaFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GetEnhMetaFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GetEnhMetaFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'");
     } else {
@@ -8320,8 +8320,8 @@ static SwigV8ReturnValue _wrap_GetEnhMetaFileBits(const SwigV8Arguments &args) {
   {
     res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_UINT,  0 );
     if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GetEnhMetaFileBits" "', argument " "2"" of type '" "UINT""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "GetEnhMetaFileBits" "', argument " "2"" of type '" "UINT""'");
+    }
     if (!argp2) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GetEnhMetaFileBits" "', argument " "2"" of type '" "UINT""'");
     } else {
@@ -8331,8 +8331,8 @@ static SwigV8ReturnValue _wrap_GetEnhMetaFileBits(const SwigV8Arguments &args) {
   {
     res3 = SWIG_ConvertPtr(args[2], &argp3, SWIGTYPE_p_LPBYTE,  0 );
     if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "GetEnhMetaFileBits" "', argument " "3"" of type '" "LPBYTE""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "GetEnhMetaFileBits" "', argument " "3"" of type '" "LPBYTE""'");
+    }
     if (!argp3) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GetEnhMetaFileBits" "', argument " "3"" of type '" "LPBYTE""'");
     } else {
@@ -8341,9 +8341,9 @@ static SwigV8ReturnValue _wrap_GetEnhMetaFileBits(const SwigV8Arguments &args) {
   }
   result = GetEnhMetaFileBits(arg1,arg2,arg3);
   jsresult = SWIG_NewPointerObj((new UINT(static_cast< const UINT& >(result))), SWIGTYPE_p_UINT, SWIG_POINTER_OWN |  0 );
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8352,20 +8352,20 @@ fail:
 
 static SwigV8ReturnValue _wrap_CloseEnhMetaFile(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
-  
+
   SWIGV8_VALUE jsresult;
   HDC arg1 ;
   void *argp1 ;
   int res1 = 0 ;
   HENHMETAFILE result;
-  
+
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CloseEnhMetaFile.");
-  
+
   {
     res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HDC,  0 );
     if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CloseEnhMetaFile" "', argument " "1"" of type '" "HDC""'"); 
-    }  
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "CloseEnhMetaFile" "', argument " "1"" of type '" "HDC""'");
+    }
     if (!argp1) {
       SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "CloseEnhMetaFile" "', argument " "1"" of type '" "HDC""'");
     } else {
@@ -8374,9 +8374,9 @@ static SwigV8ReturnValue _wrap_CloseEnhMetaFile(const SwigV8Arguments &args) {
   }
   result = CloseEnhMetaFile(arg1);
   jsresult = SWIG_NewPointerObj((new HENHMETAFILE(static_cast< const HENHMETAFILE& >(result))), SWIGTYPE_p_HENHMETAFILE, SWIG_POINTER_OWN |  0 );
-  
+
   SWIGV8_RETURN(jsresult);
-  
+
   goto fail;
 fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
@@ -8877,7 +8877,7 @@ void SWIGV8_INIT (SWIGV8_OBJECT exports_obj, SWIGV8_VALUE /*module*/, v8::Local<
   SWIGV8_SET_CLASS_TEMPL(SWIGV8_SWIGTYPE_Proxy_class_templ, SWIGV8_CreateClassTemplate("SwigProxy"));
 
   /* create objects for namespaces */
-  
+
 
   /* create class templates */
   /* Name: _exports_FPDF_BSTR, Type: p_FPDF_BSTR_, Dtor: _wrap_delete_FPDF_BSTR */
@@ -9035,7 +9035,7 @@ SWIGV8_AddStaticVariable(exports_obj, "FPDFBitmap_BGRA", _wrap_FPDFBitmap_BGRA, 
 
 
   /* setup inheritances */
-  
+
 
   /* class instances */
   /* Class: FPDF_BSTR (_exports_FPDF_BSTR) */
@@ -9271,7 +9271,7 @@ SWIGV8_MAYBE_CHECK(exports_obj->Set(context, SWIGV8_SYMBOL_NEW("FPDF_COLORSCHEME
 
 
   /* create and register namespace objects */
-  
+
 }
 
 #if defined(BUILDING_NODE_EXTENSION)
@@ -9281,3 +9281,37 @@ NODE_MODULE(pdfium, pdfium_initialize)
 NODE_MODULE_CONTEXT_AWARE(pdfium, pdfium_initialize)
 #endif
 #endif
+
+static SwigV8ReturnValue _wrap_CreateEnhMetaFileW(const SwigV8Arguments &args)
+{
+    SWIGV8_HANDLESCOPE();
+
+    SWIGV8_VALUE jsresult;
+    HDC arg1;
+    LPCWSTR arg2;
+    RECT *arg3 = (RECT *)0;
+    LPCWSTR arg4;
+    void *argp1;
+    int res1 = 0;
+    void *argp2;
+    int res2 = 0;
+    void *argp3 = 0;
+    int res3 = 0;
+    void *argp4;
+    int res4 = 0;
+    HDC result;
+
+    if (args.Length() != 4)
+        SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CreateEnhMetaFileW.");
+
+    result = CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
+    jsresult = SWIG_NewPointerObj((new HDC(static_cast<const HDC &>(result))), SWIGTYPE_p_HDC, SWIG_POINTER_OWN | 0);
+
+    SWIGV8_RETURN(jsresult);
+
+    goto fail;
+fail:
+    SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNUll, context);
