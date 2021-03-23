@@ -8446,6 +8446,40 @@ fail:
   SWIGV8_RETURN(SWIGV8_UNDEFINED());
 }
 
+static SwigV8ReturnValue _wrap_GetEnhMetaFileBitsSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+
+  SWIGV8_VALUE jsresult;
+  HENHMETAFILE arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  UINT result;
+
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_GetEnhMetaFileBits.");
+
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HENHMETAFILE,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "GetEnhMetaFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'");
+    }
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "GetEnhMetaFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'");
+    } else {
+      arg1 = *(reinterpret_cast< HENHMETAFILE * >(argp1));
+    }
+  }
+  result = GetEnhMetaFileBits(arg1,0,NULL);
+  jsresult = SWIG_NewPointerObj((new UINT(static_cast< const UINT& >(result))), SWIGTYPE_p_UINT, SWIG_POINTER_OWN |  0 );
+
+  SWIGV8_RETURN(jsresult);
+
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
 static swig_type_info _swigt__p_BOOL = {"_p_BOOL", "BOOL *", 0, 0, (void*)0, 0};
@@ -9285,6 +9319,7 @@ SWIGV8_AddStaticFunction(exports_obj, "GetEnhMetaFileBits", _wrap_GetEnhMetaFile
 SWIGV8_AddStaticFunction(exports_obj, "CloseEnhMetaFile", _wrap_CloseEnhMetaFile, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
 SWIGV8_AddStaticFunction(exports_obj, "DeleteObjectHRGN", _wrap_DeleteObjectHRGN, context);
+SWIGV8_AddStaticFunction(exports_obj, "GetEnhMetaFileBitsSize", _wrap_GetEnhMetaFileBitsSize, context);
 
   /* register classes */
   #if (V8_MAJOR_VERSION-0) < 5

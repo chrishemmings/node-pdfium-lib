@@ -79,6 +79,11 @@ if (process.platform === "win32") {
         pdfium.FPDF_RenderPage(dc, page, 0, 0, width, height, 0, FPDF_ANNOT | FPDF_PRINTING | FPDF_NO_CATCH);
         emf = pdfium.CloseEnhMetaFile(dc);
 
+        if (emf != undefined) {
+            emfSize = pdfium.getEnhMetaFileBitsSize();
+            console.log("SIZE: %s", emfSize);
+        }
+
         console.log(emf);
     }
 }
