@@ -1,6 +1,5 @@
 %module "pdfium"
 %{
-#include "std_string.i"
 #include "fpdfview.h"
 %}
 %include "externals/win/x64/include/fpdfview.h"
@@ -17,7 +16,7 @@ UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   std::string oData;
   oData.clear();
   oData.resize(size);
@@ -25,7 +24,7 @@ std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   if (size != size2) {
     return NULL;
   }
-  return oData;
+  return oData.c_str();
 }
 %}
 HDC CreateEnhMetaFileA(

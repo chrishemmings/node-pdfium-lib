@@ -1,6 +1,5 @@
 %module "pdfium"
 %{
-#include "std_string.i"
 #include "fpdfview.h"
 %}
 %include "externals/win/x64/include/fpdfview.h"

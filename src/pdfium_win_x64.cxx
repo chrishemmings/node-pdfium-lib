@@ -1673,7 +1673,6 @@ static swig_module_info swig_module = {swig_types, 43, 0, 0, 0, 0};
 #include <assert.h>
 
 
-#include "std_string.i"
 #include "fpdfview.h"
 
 

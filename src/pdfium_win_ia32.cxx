@@ -1644,13 +1644,12 @@ fail: ;
 #define SWIGTYPE_p_int swig_types[34]
 #define SWIGTYPE_p_long swig_types[35]
 #define SWIGTYPE_p_p_char swig_types[36]
-#define SWIGTYPE_p_std__string swig_types[37]
-#define SWIGTYPE_p_unsigned_int swig_types[38]
-#define SWIGTYPE_p_unsigned_long swig_types[39]
-#define SWIGTYPE_p_unsigned_short swig_types[40]
-#define SWIGTYPE_p_void swig_types[41]
-static swig_type_info *swig_types[43];
-static swig_module_info swig_module = {swig_types, 42, 0, 0, 0, 0};
+#define SWIGTYPE_p_unsigned_int swig_types[37]
+#define SWIGTYPE_p_unsigned_long swig_types[38]
+#define SWIGTYPE_p_unsigned_short swig_types[39]
+#define SWIGTYPE_p_void swig_types[40]
+static swig_type_info *swig_types[42];
+static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -1672,7 +1671,6 @@ static swig_module_info swig_module = {swig_types, 42, 0, 0, 0, 0};
 #include <assert.h>
 
 
-#include "std_string.i"
 #include "fpdfview.h"
 
 
@@ -2061,7 +2059,7 @@ UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   std::string oData;
   oData.clear();
   oData.resize(size);
@@ -2069,7 +2067,7 @@ std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   if (size != size2) {
     return NULL;
   }
-  return oData;
+  return oData.c_str();
 }
 
 
@@ -8026,7 +8024,7 @@ static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-  std::string result;
+  char *result = 0 ;
   
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhFileBits.");
   
@@ -8052,8 +8050,8 @@ static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
       arg2 = *(reinterpret_cast< UINT * >(argp2));
     }
   }
-  result = getEnhFileBits(arg1,arg2);
-  jsresult = SWIG_NewPointerObj((new std::string(static_cast< const std::string& >(result))), SWIGTYPE_p_std__string, SWIG_POINTER_OWN |  0 );
+  result = (char *)getEnhFileBits(arg1,arg2);
+  jsresult = SWIG_FromCharPtr((const char *)result);
   
   SWIGV8_RETURN(jsresult);
   
@@ -8484,7 +8482,6 @@ static swig_type_info _swigt__p_fpdf_pagerange_t__ = {"_p_fpdf_pagerange_t__", "
 static swig_type_info _swigt__p_int = {"_p_int", "FPDF_ANNOTATION_SUBTYPE *|int *|FPDF_BOOL *|FPDF_OBJECT_TYPE *|FPDF_RESULT *|FPDF_ANNOT_APPEARANCEMODE *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long = {"_p_long", "long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_long = {"_p_unsigned_long", "FPDF_DWORD *|unsigned long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "FPDF_WCHAR *|unsigned short *", 0, 0, (void*)0, 0};
@@ -8528,7 +8525,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_int,
   &_swigt__p_long,
   &_swigt__p_p_char,
-  &_swigt__p_std__string,
   &_swigt__p_unsigned_int,
   &_swigt__p_unsigned_long,
   &_swigt__p_unsigned_short,
@@ -8572,7 +8568,6 @@ static swig_cast_info _swigc__p_fpdf_pagerange_t__[] = {  {&_swigt__p_fpdf_pager
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long[] = {  {&_swigt__p_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_long[] = {  {&_swigt__p_unsigned_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short, 0, 0, 0},{0, 0, 0, 0}};
@@ -8616,7 +8611,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_int,
   _swigc__p_long,
   _swigc__p_p_char,
-  _swigc__p_std__string,
   _swigc__p_unsigned_int,
   _swigc__p_unsigned_long,
   _swigc__p_unsigned_short,
