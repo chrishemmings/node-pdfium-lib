@@ -2062,15 +2062,20 @@ UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
 }
 
 char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
-  std::string oData;
-  oData.clear();
-  oData.resize(size);
-  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+  // std::string oData;
+  // oData.clear();
+  // oData.resize(size);
+  // DWORD len = (DWORD)GetEnhMetaFileBits(hMetaClip, NULL, NULL);
+  unsigned char *buff = (unsigned char *)malloc(size);
+  UINT size2 = GetEnhMetaFileBits(hMetaClip, len, buff);
+    // MsgBox("MetaFile not copied");
+
+  // UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
   if (size != size2) {
     return NULL;
   }
-  char *c = oData.c_str();
-  return c;
+  // char *c = oData.c_str();
+  return buff;
 }
 
 
