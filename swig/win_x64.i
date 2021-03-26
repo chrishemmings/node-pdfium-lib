@@ -16,12 +16,12 @@ UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-unsigned char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   // std::string oData;
   // oData.clear();
   // oData.resize(size);
   // DWORD len = (DWORD)GetEnhMetaFileBits(hMetaClip, NULL, NULL);
-  unsigned char *buff = (unsigned char *)malloc(size);
+  char *buff = (char *)malloc(size);
   UINT size2 = GetEnhMetaFileBits(hEMF, size, buff);
   // MsgBox("MetaFile not copied");
 
