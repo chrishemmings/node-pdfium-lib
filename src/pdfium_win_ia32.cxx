@@ -1644,12 +1644,13 @@ fail: ;
 #define SWIGTYPE_p_int swig_types[34]
 #define SWIGTYPE_p_long swig_types[35]
 #define SWIGTYPE_p_p_char swig_types[36]
-#define SWIGTYPE_p_unsigned_int swig_types[37]
-#define SWIGTYPE_p_unsigned_long swig_types[38]
-#define SWIGTYPE_p_unsigned_short swig_types[39]
-#define SWIGTYPE_p_void swig_types[40]
-static swig_type_info *swig_types[42];
-static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
+#define SWIGTYPE_p_std__string swig_types[37]
+#define SWIGTYPE_p_unsigned_int swig_types[38]
+#define SWIGTYPE_p_unsigned_long swig_types[39]
+#define SWIGTYPE_p_unsigned_short swig_types[40]
+#define SWIGTYPE_p_void swig_types[41]
+static swig_type_info *swig_types[43];
+static swig_module_info swig_module = {swig_types, 42, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2057,6 +2058,17 @@ HDC CreateEnhMetaFileWNull() {
 
 UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
+}
+
+std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+  std::string oData;
+  oData.clear();
+  oData.resize(size);
+  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+  if (emf_size != size2) {
+    return NULL;
+  }
+  return oData;
 }
 
 
@@ -8003,6 +8015,53 @@ fail:
 }
 
 
+static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HENHMETAFILE arg1 ;
+  UINT arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 ;
+  int res2 = 0 ;
+  std::string result;
+  
+  if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhFileBits.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HENHMETAFILE,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getEnhFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getEnhFileBits" "', argument " "1"" of type '" "HENHMETAFILE""'");
+    } else {
+      arg1 = *(reinterpret_cast< HENHMETAFILE * >(argp1));
+    }
+  }
+  {
+    res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_UINT,  0 );
+    if (!SWIG_IsOK(res2)) {
+      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "getEnhFileBits" "', argument " "2"" of type '" "UINT""'"); 
+    }  
+    if (!argp2) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getEnhFileBits" "', argument " "2"" of type '" "UINT""'");
+    } else {
+      arg2 = *(reinterpret_cast< UINT * >(argp2));
+    }
+  }
+  result = getEnhFileBits(arg1,arg2);
+  jsresult = SWIG_NewPointerObj((new std::string(static_cast< const std::string& >(result))), SWIGTYPE_p_std__string, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 static SwigV8ReturnValue _wrap_CreateEnhMetaFileA(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
@@ -8424,6 +8483,7 @@ static swig_type_info _swigt__p_fpdf_pagerange_t__ = {"_p_fpdf_pagerange_t__", "
 static swig_type_info _swigt__p_int = {"_p_int", "FPDF_ANNOTATION_SUBTYPE *|int *|FPDF_BOOL *|FPDF_OBJECT_TYPE *|FPDF_RESULT *|FPDF_ANNOT_APPEARANCEMODE *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long = {"_p_long", "long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_char = {"_p_p_char", "char **", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_std__string = {"_p_std__string", "std::string *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_int = {"_p_unsigned_int", "unsigned int *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_long = {"_p_unsigned_long", "FPDF_DWORD *|unsigned long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "FPDF_WCHAR *|unsigned short *", 0, 0, (void*)0, 0};
@@ -8467,6 +8527,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_int,
   &_swigt__p_long,
   &_swigt__p_p_char,
+  &_swigt__p_std__string,
   &_swigt__p_unsigned_int,
   &_swigt__p_unsigned_long,
   &_swigt__p_unsigned_short,
@@ -8510,6 +8571,7 @@ static swig_cast_info _swigc__p_fpdf_pagerange_t__[] = {  {&_swigt__p_fpdf_pager
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long[] = {  {&_swigt__p_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_char[] = {  {&_swigt__p_p_char, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_std__string[] = {  {&_swigt__p_std__string, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_int[] = {  {&_swigt__p_unsigned_int, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_long[] = {  {&_swigt__p_unsigned_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short, 0, 0, 0},{0, 0, 0, 0}};
@@ -8553,6 +8615,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_int,
   _swigc__p_long,
   _swigc__p_p_char,
+  _swigc__p_std__string,
   _swigc__p_unsigned_int,
   _swigc__p_unsigned_long,
   _swigc__p_unsigned_short,
@@ -9207,6 +9270,7 @@ SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketContent", _wrap_FPDF_Get
 SWIGV8_AddStaticFunction(exports_obj, "DeleteObjectHRGN", _wrap_DeleteObjectHRGN, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
 SWIGV8_AddStaticFunction(exports_obj, "getEnhMetaFileBitsSize", _wrap_getEnhMetaFileBitsSize, context);
+SWIGV8_AddStaticFunction(exports_obj, "getEnhFileBits", _wrap_getEnhFileBits, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileA", _wrap_CreateEnhMetaFileA, context);
 SWIGV8_AddStaticFunction(exports_obj, "SelectClipRgn", _wrap_SelectClipRgn, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateRectRgn", _wrap_CreateRectRgn, context);

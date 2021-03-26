@@ -15,6 +15,17 @@ HDC CreateEnhMetaFileWNull() {
 UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
+
+std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+  std::string oData;
+  oData.clear();
+  oData.resize(size);
+  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+  if (emf_size != size2) {
+    return NULL;
+  }
+  return oData;
+}
 %}
 HDC CreateMetaFileA(
   LPCSTR pszFile
