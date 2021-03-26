@@ -24,7 +24,8 @@ char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   if (size != size2) {
     return NULL;
   }
-  return oData.c_str();
+  char const *c = oData.c_str();
+  return c;
 }
 %}
 HDC CreateEnhMetaFileA(
