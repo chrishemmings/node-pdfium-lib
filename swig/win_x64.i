@@ -3,6 +3,15 @@
 #include "fpdfview.h"
 %}
 %include "externals/win/x64/include/fpdfview.h"
+%inline %{
+BOOL DeleteObjectHRGN(HRGN hrgn) {
+  return DeleteObject(hrgn)
+}
+
+HDC CreateEnhMetaFileWNull() {
+  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL)
+}
+%}
 HDC CreateMetaFileA(
   LPCSTR pszFile
 );

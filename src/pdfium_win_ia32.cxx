@@ -2046,6 +2046,15 @@ SWIG_From_size_t  (size_t value)
 }
 
 
+BOOL DeleteObjectHRGN(HRGN hrgn) {
+  return DeleteObject(hrgn)
+}
+
+HDC CreateEnhMetaFileWNull() {
+  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL)
+}
+
+
 #define SWIGV8_INIT pdfium_initialize
 
 
@@ -7904,6 +7913,58 @@ fail:
 }
 
 
+static SwigV8ReturnValue _wrap_DeleteObjectHRGN(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HRGN arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  BOOL result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_DeleteObjectHRGN.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HRGN,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "DeleteObjectHRGN" "', argument " "1"" of type '" "HRGN""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "DeleteObjectHRGN" "', argument " "1"" of type '" "HRGN""'");
+    } else {
+      arg1 = *(reinterpret_cast< HRGN * >(argp1));
+    }
+  }
+  result = DeleteObjectHRGN(arg1);
+  jsresult = SWIG_NewPointerObj((new BOOL(static_cast< const BOOL& >(result))), SWIGTYPE_p_BOOL, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
+static SwigV8ReturnValue _wrap_CreateEnhMetaFileWNull(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HDC result;
+  
+  if(args.Length() != 0) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_CreateEnhMetaFileWNull.");
+  
+  result = CreateEnhMetaFileWNull();
+  jsresult = SWIG_NewPointerObj((new HDC(static_cast< const HDC& >(result))), SWIGTYPE_p_HDC, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 static SwigV8ReturnValue _wrap_CreateEnhMetaFileA(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
@@ -9101,6 +9162,8 @@ SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetNamedDest", _wrap_FPDF_GetNamedDe
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketCount", _wrap_FPDF_GetXFAPacketCount, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketName", _wrap_FPDF_GetXFAPacketName, context);
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketContent", _wrap_FPDF_GetXFAPacketContent, context);
+SWIGV8_AddStaticFunction(exports_obj, "DeleteObjectHRGN", _wrap_DeleteObjectHRGN, context);
+SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileA", _wrap_CreateEnhMetaFileA, context);
 SWIGV8_AddStaticFunction(exports_obj, "SelectClipRgn", _wrap_SelectClipRgn, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateRectRgn", _wrap_CreateRectRgn, context);
