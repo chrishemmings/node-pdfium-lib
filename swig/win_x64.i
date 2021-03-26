@@ -24,7 +24,7 @@ char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   if (size != size2) {
     return NULL;
   }
-  char const *c = oData.c_str();
+  char *c = oData.c_str();
   return c;
 }
 %}
