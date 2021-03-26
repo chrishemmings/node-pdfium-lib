@@ -2065,7 +2065,7 @@ std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
   oData.clear();
   oData.resize(size);
   UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
-  if (emf_size != size2) {
+  if (size != size2) {
     return NULL;
   }
   return oData;
