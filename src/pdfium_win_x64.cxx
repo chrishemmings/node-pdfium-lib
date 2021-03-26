@@ -2050,11 +2050,11 @@ SWIG_From_size_t  (size_t value)
 
 
 BOOL DeleteObjectHRGN(HRGN hrgn) {
-  return DeleteObject(hrgn)
+  return DeleteObject(hrgn);
 }
 
 HDC CreateEnhMetaFileWNull() {
-  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL)
+  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
 }
 
 
