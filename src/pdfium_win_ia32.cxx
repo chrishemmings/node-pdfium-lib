@@ -1622,33 +1622,34 @@ fail: ;
 #define SWIGTYPE_p_HRGN swig_types[12]
 #define SWIGTYPE_p_LPCSTR swig_types[13]
 #define SWIGTYPE_p_RECT swig_types[14]
-#define SWIGTYPE_p__FPDF_DUPLEXTYPE_ swig_types[15]
-#define SWIGTYPE_p__FS_MATRIX_ swig_types[16]
-#define SWIGTYPE_p__FS_RECTF_ swig_types[17]
-#define SWIGTYPE_p_char swig_types[18]
-#define SWIGTYPE_p_double swig_types[19]
-#define SWIGTYPE_p_f_p_void__int swig_types[20]
-#define SWIGTYPE_p_f_p_void__unsigned_long swig_types[21]
-#define SWIGTYPE_p_f_p_void__void swig_types[22]
-#define SWIGTYPE_p_f_p_void_unsigned_long__int swig_types[23]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int swig_types[24]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int swig_types[25]
-#define SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int swig_types[26]
-#define SWIGTYPE_p_float swig_types[27]
-#define SWIGTYPE_p_fpdf_bitmap_t__ swig_types[28]
-#define SWIGTYPE_p_fpdf_dest_t__ swig_types[29]
-#define SWIGTYPE_p_fpdf_document_t__ swig_types[30]
-#define SWIGTYPE_p_fpdf_page_t__ swig_types[31]
-#define SWIGTYPE_p_fpdf_pagerange_t__ swig_types[32]
-#define SWIGTYPE_p_int swig_types[33]
-#define SWIGTYPE_p_long swig_types[34]
-#define SWIGTYPE_p_p_char swig_types[35]
-#define SWIGTYPE_p_unsigned_int swig_types[36]
-#define SWIGTYPE_p_unsigned_long swig_types[37]
-#define SWIGTYPE_p_unsigned_short swig_types[38]
-#define SWIGTYPE_p_void swig_types[39]
-static swig_type_info *swig_types[41];
-static swig_module_info swig_module = {swig_types, 40, 0, 0, 0, 0};
+#define SWIGTYPE_p_UINT swig_types[15]
+#define SWIGTYPE_p__FPDF_DUPLEXTYPE_ swig_types[16]
+#define SWIGTYPE_p__FS_MATRIX_ swig_types[17]
+#define SWIGTYPE_p__FS_RECTF_ swig_types[18]
+#define SWIGTYPE_p_char swig_types[19]
+#define SWIGTYPE_p_double swig_types[20]
+#define SWIGTYPE_p_f_p_void__int swig_types[21]
+#define SWIGTYPE_p_f_p_void__unsigned_long swig_types[22]
+#define SWIGTYPE_p_f_p_void__void swig_types[23]
+#define SWIGTYPE_p_f_p_void_unsigned_long__int swig_types[24]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_q_const__void_unsigned_long__int swig_types[25]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_unsigned_char_unsigned_long__int swig_types[26]
+#define SWIGTYPE_p_f_p_void_unsigned_long_p_void_unsigned_long__int swig_types[27]
+#define SWIGTYPE_p_float swig_types[28]
+#define SWIGTYPE_p_fpdf_bitmap_t__ swig_types[29]
+#define SWIGTYPE_p_fpdf_dest_t__ swig_types[30]
+#define SWIGTYPE_p_fpdf_document_t__ swig_types[31]
+#define SWIGTYPE_p_fpdf_page_t__ swig_types[32]
+#define SWIGTYPE_p_fpdf_pagerange_t__ swig_types[33]
+#define SWIGTYPE_p_int swig_types[34]
+#define SWIGTYPE_p_long swig_types[35]
+#define SWIGTYPE_p_p_char swig_types[36]
+#define SWIGTYPE_p_unsigned_int swig_types[37]
+#define SWIGTYPE_p_unsigned_long swig_types[38]
+#define SWIGTYPE_p_unsigned_short swig_types[39]
+#define SWIGTYPE_p_void swig_types[40]
+static swig_type_info *swig_types[42];
+static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -2047,11 +2048,15 @@ SWIG_From_size_t  (size_t value)
 
 
 BOOL DeleteObjectHRGN(HRGN hrgn) {
-  return DeleteObject(hrgn)
+  return DeleteObject(hrgn);
 }
 
 HDC CreateEnhMetaFileWNull() {
-  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL)
+  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
+}
+
+UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
+  return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
 
@@ -7965,6 +7970,39 @@ fail:
 }
 
 
+static SwigV8ReturnValue _wrap_getEnhMetaFileBitsSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HENHMETAFILE arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  UINT result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhMetaFileBitsSize.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HENHMETAFILE,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getEnhMetaFileBitsSize" "', argument " "1"" of type '" "HENHMETAFILE""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getEnhMetaFileBitsSize" "', argument " "1"" of type '" "HENHMETAFILE""'");
+    } else {
+      arg1 = *(reinterpret_cast< HENHMETAFILE * >(argp1));
+    }
+  }
+  result = getEnhMetaFileBitsSize(arg1);
+  jsresult = SWIG_NewPointerObj((new UINT(static_cast< const UINT& >(result))), SWIGTYPE_p_UINT, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 static SwigV8ReturnValue _wrap_CreateEnhMetaFileA(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
@@ -8364,6 +8402,7 @@ static swig_type_info _swigt__p_HGDIOBJ = {"_p_HGDIOBJ", "HGDIOBJ *", 0, 0, (voi
 static swig_type_info _swigt__p_HRGN = {"_p_HRGN", "HRGN *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_LPCSTR = {"_p_LPCSTR", "LPCSTR *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_RECT = {"_p_RECT", "RECT *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_UINT = {"_p_UINT", "UINT *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p__FPDF_DUPLEXTYPE_ = {"_p__FPDF_DUPLEXTYPE_", "FPDF_DUPLEXTYPE *|enum _FPDF_DUPLEXTYPE_ *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p__FS_MATRIX_ = {"_p__FS_MATRIX_", "FS_MATRIX *|_FS_MATRIX_ *|p__FS_MATRIX_", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p__FS_RECTF_ = {"_p__FS_RECTF_", "FS_RECTF *|_FS_RECTF_ *|p__FS_RECTF_", 0, 0, (void*)0, 0};
@@ -8406,6 +8445,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_HRGN,
   &_swigt__p_LPCSTR,
   &_swigt__p_RECT,
+  &_swigt__p_UINT,
   &_swigt__p__FPDF_DUPLEXTYPE_,
   &_swigt__p__FS_MATRIX_,
   &_swigt__p__FS_RECTF_,
@@ -8448,6 +8488,7 @@ static swig_cast_info _swigc__p_HGDIOBJ[] = {  {&_swigt__p_HGDIOBJ, 0, 0, 0},{0,
 static swig_cast_info _swigc__p_HRGN[] = {  {&_swigt__p_HRGN, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_LPCSTR[] = {  {&_swigt__p_LPCSTR, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_RECT[] = {  {&_swigt__p_RECT, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_UINT[] = {  {&_swigt__p_UINT, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p__FPDF_DUPLEXTYPE_[] = {  {&_swigt__p__FPDF_DUPLEXTYPE_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p__FS_MATRIX_[] = {  {&_swigt__p__FS_MATRIX_, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p__FS_RECTF_[] = {  {&_swigt__p__FS_RECTF_, 0, 0, 0},{0, 0, 0, 0}};
@@ -8490,6 +8531,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_HRGN,
   _swigc__p_LPCSTR,
   _swigc__p_RECT,
+  _swigc__p_UINT,
   _swigc__p__FPDF_DUPLEXTYPE_,
   _swigc__p__FS_MATRIX_,
   _swigc__p__FS_RECTF_,
@@ -9164,6 +9206,7 @@ SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketName", _wrap_FPDF_GetXFA
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketContent", _wrap_FPDF_GetXFAPacketContent, context);
 SWIGV8_AddStaticFunction(exports_obj, "DeleteObjectHRGN", _wrap_DeleteObjectHRGN, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
+SWIGV8_AddStaticFunction(exports_obj, "getEnhMetaFileBitsSize", _wrap_getEnhMetaFileBitsSize, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileA", _wrap_CreateEnhMetaFileA, context);
 SWIGV8_AddStaticFunction(exports_obj, "SelectClipRgn", _wrap_SelectClipRgn, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateRectRgn", _wrap_CreateRectRgn, context);

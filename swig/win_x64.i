@@ -11,6 +11,10 @@ BOOL DeleteObjectHRGN(HRGN hrgn) {
 HDC CreateEnhMetaFileWNull() {
   return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
 }
+
+UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
+  return GetEnhMetaFileBits(hEMF, 0, NULL);
+}
 %}
 HDC CreateMetaFileA(
   LPCSTR pszFile

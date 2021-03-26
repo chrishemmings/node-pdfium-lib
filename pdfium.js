@@ -66,10 +66,8 @@ if (process.platform === "win32") {
     exports.createEmf = function(page) {
         width = pdfium.FPDF_GetPageWidth(page);
         height = pdfium.FPDF_GetPageHeight(page);
-        dc = pdfium.CreateEnhMetaFileWNull(undefined, undefined, undefined, undefined);
+        dc = pdfium.CreateEnhMetaFileWNull();
         rgn = pdfium.CreateRectRgn(0, 0, width, height);
-        // HDC dc = CreateEnhMetaFileA(NULL, null, NULL, NULL);
-        // HRGN rgn = CreateRectRgn(0, 0, width, height);
         pdfium.SelectClipRgn(dc, rgn);
         pdfium.DeleteObjectHRGN(rgn);
         pdfium.SelectObject(dc, pdfium.GetStockObject(NULL_PEN));
@@ -80,7 +78,7 @@ if (process.platform === "win32") {
         emf = pdfium.CloseEnhMetaFile(dc);
 
         if (emf != undefined) {
-            emfSize = pdfium.getEnhMetaFileBitsSize();
+            emfSize = pdfium.getEnhMetaFileBitsSize(emf);
             console.log("SIZE: %s", emfSize);
         }
 

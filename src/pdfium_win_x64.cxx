@@ -2057,6 +2057,10 @@ HDC CreateEnhMetaFileWNull() {
   return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
 }
 
+UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
+  return GetEnhMetaFileBits(hEMF, 0, NULL);
+}
+
 
 #define SWIGV8_INIT pdfium_initialize
 
@@ -7968,6 +7972,39 @@ fail:
 }
 
 
+static SwigV8ReturnValue _wrap_getEnhMetaFileBitsSize(const SwigV8Arguments &args) {
+  SWIGV8_HANDLESCOPE();
+  
+  SWIGV8_VALUE jsresult;
+  HENHMETAFILE arg1 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  UINT result;
+  
+  if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhMetaFileBitsSize.");
+  
+  {
+    res1 = SWIG_ConvertPtr(args[0], &argp1, SWIGTYPE_p_HENHMETAFILE,  0 );
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "getEnhMetaFileBitsSize" "', argument " "1"" of type '" "HENHMETAFILE""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getEnhMetaFileBitsSize" "', argument " "1"" of type '" "HENHMETAFILE""'");
+    } else {
+      arg1 = *(reinterpret_cast< HENHMETAFILE * >(argp1));
+    }
+  }
+  result = getEnhMetaFileBitsSize(arg1);
+  jsresult = SWIG_NewPointerObj((new UINT(static_cast< const UINT& >(result))), SWIGTYPE_p_UINT, SWIG_POINTER_OWN |  0 );
+  
+  SWIGV8_RETURN(jsresult);
+  
+  goto fail;
+fail:
+  SWIGV8_RETURN(SWIGV8_UNDEFINED());
+}
+
+
 static SwigV8ReturnValue _wrap_CreateMetaFileA(const SwigV8Arguments &args) {
   SWIGV8_HANDLESCOPE();
   
@@ -9273,6 +9310,7 @@ SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketName", _wrap_FPDF_GetXFA
 SWIGV8_AddStaticFunction(exports_obj, "FPDF_GetXFAPacketContent", _wrap_FPDF_GetXFAPacketContent, context);
 SWIGV8_AddStaticFunction(exports_obj, "DeleteObjectHRGN", _wrap_DeleteObjectHRGN, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateEnhMetaFileWNull", _wrap_CreateEnhMetaFileWNull, context);
+SWIGV8_AddStaticFunction(exports_obj, "getEnhMetaFileBitsSize", _wrap_getEnhMetaFileBitsSize, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateMetaFileA", _wrap_CreateMetaFileA, context);
 SWIGV8_AddStaticFunction(exports_obj, "SelectClipRgn", _wrap_SelectClipRgn, context);
 SWIGV8_AddStaticFunction(exports_obj, "CreateRectRgn", _wrap_CreateRectRgn, context);

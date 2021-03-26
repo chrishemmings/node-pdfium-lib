@@ -5,11 +5,15 @@
 %include "externals/win/x64/include/fpdfview.h"
 %inline %{
 BOOL DeleteObjectHRGN(HRGN hrgn) {
-  return DeleteObject(hrgn)
+  return DeleteObject(hrgn);
 }
 
 HDC CreateEnhMetaFileWNull() {
-  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL)
+  return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
+}
+
+UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
+  return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 %}
 HDC CreateEnhMetaFileA(
