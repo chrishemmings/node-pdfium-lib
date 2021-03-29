@@ -1673,6 +1673,9 @@ static swig_module_info swig_module = {swig_types, 43, 0, 0, 0, 0};
 #include <assert.h>
 
 
+#include <string>
+
+
 #include "fpdfview.h"
 
 
@@ -2061,21 +2064,22 @@ UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
-  // std::string oData;
-  // oData.clear();
-  // oData.resize(size);
-  // DWORD len = (DWORD)GetEnhMetaFileBits(hMetaClip, NULL, NULL);
-  char *buff = (char *)malloc(size);
-  UINT size2 = GetEnhMetaFileBits(hEMF, size, buff);
-  // MsgBox("MetaFile not copied");
-
-  // UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+  std::string oData;
+  oData.clear();
+  oData.resize(size);
+  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
   if (size != size2) {
     return NULL;
   }
-  // char *c = oData.c_str();
-  return buff;
+  return oData;
+}
+
+
+SWIGINTERNINLINE SWIGV8_VALUE
+SWIG_From_std_string  (const std::string& s)
+{
+  return SWIG_FromCharPtrAndSize(s.data(), s.size());
 }
 
 
@@ -8032,7 +8036,7 @@ static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
   int res1 = 0 ;
   void *argp2 ;
   int res2 = 0 ;
-  char *result = 0 ;
+  std::string result;
   
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhFileBits.");
   
@@ -8058,8 +8062,8 @@ static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
       arg2 = *(reinterpret_cast< UINT * >(argp2));
     }
   }
-  result = (char *)getEnhFileBits(arg1,arg2);
-  jsresult = SWIG_FromCharPtr((const char *)result);
+  result = getEnhFileBits(arg1,arg2);
+  jsresult = SWIG_From_std_string(static_cast< std::string >(result));
   
   SWIGV8_RETURN(jsresult);
   

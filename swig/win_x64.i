@@ -1,4 +1,5 @@
 %module "pdfium"
+%include <std_string.i>
 %{
 #include "fpdfview.h"
 %}
@@ -16,21 +17,15 @@ UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-char * getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
-  // std::string oData;
-  // oData.clear();
-  // oData.resize(size);
-  // DWORD len = (DWORD)GetEnhMetaFileBits(hMetaClip, NULL, NULL);
-  char *buff = (char *)malloc(size);
-  UINT size2 = GetEnhMetaFileBits(hEMF, size, buff);
-  // MsgBox("MetaFile not copied");
-
-  // UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
+  std::string oData;
+  oData.clear();
+  oData.resize(size);
+  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
   if (size != size2) {
     return NULL;
   }
-  // char *c = oData.c_str();
-  return buff;
+  return oData;
 }
 %}
 HDC CreateMetaFileA(
