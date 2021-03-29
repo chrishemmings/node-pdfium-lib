@@ -2060,18 +2060,18 @@ HDC CreateEnhMetaFileWNull() {
   return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
 }
 
-UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
+unsigned int getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
-  std::string oData;
-  oData.clear();
-  oData.resize(size);
-  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+std::string getEnhFileBits(HENHMETAFILE hEMF, unsigned int size) {
+  unsigned char *buff=(unsigned char *) malloc(len);
+  UINT size2 = GetEnhMetaFileBits(hEMF, size, buff);
   if (size != size2) {
     return NULL;
   }
+
+  std::string oData(reinterpret_cast<char const *>(uc), size);
   return oData;
 }
 
@@ -8000,7 +8000,7 @@ static SwigV8ReturnValue _wrap_getEnhMetaFileBitsSize(const SwigV8Arguments &arg
   HENHMETAFILE arg1 ;
   void *argp1 ;
   int res1 = 0 ;
-  UINT result;
+  unsigned int result;
   
   if(args.Length() != 1) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhMetaFileBitsSize.");
   
@@ -8015,8 +8015,8 @@ static SwigV8ReturnValue _wrap_getEnhMetaFileBitsSize(const SwigV8Arguments &arg
       arg1 = *(reinterpret_cast< HENHMETAFILE * >(argp1));
     }
   }
-  result = getEnhMetaFileBitsSize(arg1);
-  jsresult = SWIG_NewPointerObj((new UINT(static_cast< const UINT& >(result))), SWIGTYPE_p_UINT, SWIG_POINTER_OWN |  0 );
+  result = (unsigned int)getEnhMetaFileBitsSize(arg1);
+  jsresult = SWIG_From_unsigned_SS_int(static_cast< unsigned int >(result));
   
   SWIGV8_RETURN(jsresult);
   
@@ -8031,11 +8031,11 @@ static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
   
   SWIGV8_VALUE jsresult;
   HENHMETAFILE arg1 ;
-  UINT arg2 ;
+  unsigned int arg2 ;
   void *argp1 ;
   int res1 = 0 ;
-  void *argp2 ;
-  int res2 = 0 ;
+  unsigned int val2 ;
+  int ecode2 = 0 ;
   std::string result;
   
   if(args.Length() != 2) SWIG_exception_fail(SWIG_ERROR, "Illegal number of arguments for _wrap_getEnhFileBits.");
@@ -8051,19 +8051,14 @@ static SwigV8ReturnValue _wrap_getEnhFileBits(const SwigV8Arguments &args) {
       arg1 = *(reinterpret_cast< HENHMETAFILE * >(argp1));
     }
   }
-  {
-    res2 = SWIG_ConvertPtr(args[1], &argp2, SWIGTYPE_p_UINT,  0 );
-    if (!SWIG_IsOK(res2)) {
-      SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "getEnhFileBits" "', argument " "2"" of type '" "UINT""'"); 
-    }  
-    if (!argp2) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "getEnhFileBits" "', argument " "2"" of type '" "UINT""'");
-    } else {
-      arg2 = *(reinterpret_cast< UINT * >(argp2));
-    }
-  }
+  ecode2 = SWIG_AsVal_unsigned_SS_int(args[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "getEnhFileBits" "', argument " "2"" of type '" "unsigned int""'");
+  } 
+  arg2 = static_cast< unsigned int >(val2);
   result = getEnhFileBits(arg1,arg2);
   jsresult = SWIG_From_std_string(static_cast< std::string >(result));
+  
   
   SWIGV8_RETURN(jsresult);
   

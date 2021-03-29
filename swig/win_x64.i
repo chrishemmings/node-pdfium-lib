@@ -13,18 +13,17 @@ HDC CreateEnhMetaFileWNull() {
   return CreateEnhMetaFileW(NULL, NULL, NULL, NULL);
 }
 
-UINT getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
+unsigned int getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
   return GetEnhMetaFileBits(hEMF, 0, NULL);
 }
 
-std::string getEnhFileBits(HENHMETAFILE hEMF, UINT size) {
-  std::string oData;
-  oData.clear();
-  oData.resize(size);
-  UINT size2 = GetEnhMetaFileBits(hEMF, size, reinterpret_cast<BYTE *>((void *)(oData.c_str())));
+std::string getEnhFileBits(HENHMETAFILE hEMF, unsigned int size) {
+  unsigned char *buff=(unsigned char *) malloc(size);
+  unsigned int size2 = GetEnhMetaFileBits(hEMF, size, buff);
   if (size != size2) {
     return NULL;
   }
+  std::string oData(reinterpret_cast<char const *>(buff), size);
   return oData;
 }
 %}
