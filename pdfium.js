@@ -79,11 +79,8 @@ if (process.platform === "win32") {
 
         if (emf != undefined) {
             emfSize = pdfium.getEnhMetaFileBitsSize(emf);
-            console.log("SIZE: %s", emfSize);
-            x = pdfium.getEnhFileBits(emf, emfSize);
-            console.log(x);
+            emfFileContents = pdfium.getEnhFileBits(emf, emfSize);
+            return emfFileContents;
         }
-
-        console.log(emf);
     }
 }
