@@ -2065,13 +2065,12 @@ unsigned int getEnhMetaFileBitsSize(HENHMETAFILE hEMF) {
 }
 
 std::string getEnhFileBits(HENHMETAFILE hEMF, unsigned int size) {
-  unsigned char *buff=(unsigned char *) malloc(len);
-  UINT size2 = GetEnhMetaFileBits(hEMF, size, buff);
+  unsigned char *buff=(unsigned char *) malloc(size);
+  unsigned int size2 = GetEnhMetaFileBits(hEMF, size, buff);
   if (size != size2) {
     return NULL;
   }
-
-  std::string oData(reinterpret_cast<char const *>(uc), size);
+  std::string oData(reinterpret_cast<char const *>(buff), size);
   return oData;
 }
 
